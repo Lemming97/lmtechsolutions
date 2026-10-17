@@ -262,7 +262,7 @@ export const ui = {
 }
 
 export const meta = {
-  title: 'L&M Technology Solutions',
+  title: 'L&M Technology Solutions | Conseil Produit, QA et Go-to-Market',
   description:
-    'Conseil indépendant en product management, assurance qualité, opérations support et go-to-market. Basée à Paris, au service d’équipes en Europe et aux États-Unis.',
+    'Conseil en product management, assurance qualité et go-to-market par Lindsey Martin. Basée à Paris, au service d’équipes en Europe et aux États-Unis.',
 }

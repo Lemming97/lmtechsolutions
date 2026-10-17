@@ -262,7 +262,7 @@ export const ui = {
 }
 
 export const meta = {
-  title: 'L&M Technology Solutions',
+  title: 'L&M Technology Solutions | Product, QA and Go to Market Consulting',
   description:
-    'Independent consulting in product management, quality assurance, support operations and go to market. Based in Paris, working with teams in Europe and the US.',
+    'Product management, quality assurance and go to market consulting from Lindsey Martin. Based in Paris, working with teams in Europe and the US.',
 }
