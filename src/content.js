@@ -83,7 +83,7 @@ export const stack = {
       tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile and Scrum'],
     },
     { label: 'Design and collaboration', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
-    { label: 'Analytics', tools: ['Google Analytics', 'SQL'] },
+    { label: 'Analytics', tools: ['Google Analytics', 'Google Search Console', 'SQL'] },
     { label: 'AI tools', tools: ['Claude', 'Perplexity', 'Gemini'] },
   ],
 }
