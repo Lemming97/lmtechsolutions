@@ -1,6 +1,8 @@
+import { useI18n } from '../i18n.jsx'
+
 // Hero illustration: three stacked layers showing how the work fits together.
 // Product strategy on top, quality in the middle, client solutions as the base.
-// Labels come from content.js (hero.layers), top layer first.
+// Labels come from the content files (hero.layers), top layer first.
 
 const INK = '#1E1B4B'
 const PRI = '#4338A8'
@@ -45,8 +47,9 @@ function Label({ y, title, text }) {
 }
 
 export default function LayersIllustration({ layers }) {
+  const { ui } = useI18n().t
   const [product, quality, solutions] = layers
-  const description = `An illustration of three stacked layers: ${layers
+  const description = `${ui.illustration}: ${layers
     .map((l) => `${l.title}, ${l.text.toLowerCase()}`)
     .join('; ')}.`
 

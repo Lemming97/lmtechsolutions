@@ -1,7 +1,8 @@
-import { services } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 import Stack from './Stack.jsx'
 
 export default function Services() {
+  const { services } = useI18n().t
   return (
     <section className="block" id="services">
       <div className="wrap">

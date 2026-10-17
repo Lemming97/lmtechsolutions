@@ -1,6 +1,7 @@
-import { work } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 
 export default function Work() {
+  const { work, ui } = useI18n().t
   return (
     <section className="block" id="work">
       <div className="wrap">
@@ -22,12 +23,12 @@ export default function Work() {
               </div>
               <div className="case-body">
               <dl>
-                <dt>The challenge</dt>
+                <dt>{ui.challenge}</dt>
                 <dd>{item.problem}</dd>
-                <dt>What I did</dt>
+                <dt>{ui.whatIDid}</dt>
                 <dd>{item.did}</dd>
               </dl>
-              <ul className="skills" aria-label="Skills used">
+              <ul className="skills" aria-label={ui.skillsUsed}>
                 {item.skills.map((skill) => (
                   <li key={skill}>{skill}</li>
                 ))}

@@ -1,6 +1,7 @@
-import { process } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 
 export default function Process() {
+  const { process } = useI18n().t
   return (
     <section className="block" id="process">
       <div className="wrap">

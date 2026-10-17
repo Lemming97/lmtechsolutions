@@ -1,5 +1,5 @@
-// All the words on the site live here. Edit this file to change the copy;
-// the components in src/components only handle layout.
+// English copy for the site. fr.js holds the French version with the same
+// structure: when you change a line here, change the matching line there.
 
 export const site = {
   name: 'L&M Technology Solutions',
@@ -202,4 +202,22 @@ export const contact = {
   text: "Tell me a little about what you're working on. I'll reply within two business days to set up a free 30 minute call.",
   buttonLabel: 'Email me',
   subject: 'Project inquiry',
+}
+
+// Short labels used inside components
+export const ui = {
+  getInTouch: 'Get in touch',
+  home: 'home',
+  mainNav: 'Main',
+  language: 'Language',
+  challenge: 'The challenge',
+  whatIDid: 'What I did',
+  skillsUsed: 'Skills used',
+  illustration: 'An illustration of three stacked layers',
+}
+
+export const meta = {
+  title: 'L&M Technology Solutions',
+  description:
+    'Independent consulting in product management, quality assurance, support operations and go to market. Based in Paris, working with teams in Europe and the US.',
 }
