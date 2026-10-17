@@ -89,9 +89,9 @@ export const stack = {
 }
 
 export const work = {
-  title: 'Recent work',
+  title: 'Selected work',
   intro:
-    'Results from recent product, QA, support and go to market projects. Clients are described by industry to keep their details confidential.',
+    'Results from product, QA, client and go to market work. Clients are described by industry to keep their details confidential.',
   items: [
     {
       area: 'Quality assurance',
@@ -137,6 +137,15 @@ export const work = {
       title: 'Running usability studies for new products',
       problem: 'Design and engineering teams needed evidence of how real people used new input mechanisms before committing to hardware and software designs.',
       did: 'Facilitated usability sessions from one on one interviews to large groups, ran study protocols and surveys, and shared findings with design, engineering and product teams.',
+    },
+    {
+      area: 'Client solutions',
+      sector: 'Digital health',
+      metric: 'One contact',
+      metricLabel: 'between clients, clinical teams and engineering',
+      title: 'Turning client needs into product fixes',
+      problem: 'Enterprise clients and clinical staff needed one person who understood both their needs and the product, so issues did not get lost between teams.',
+      did: 'Led implementation guidance, training and product consultation for clients, acted as the main technical escalation point, built client relationships at on site events, and channeled feedback to product and engineering.',
     },
     {
       area: 'Support operations',
