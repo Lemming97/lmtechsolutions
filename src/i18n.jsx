@@ -9,6 +9,7 @@ export const LANGUAGES = [
 
 const CONTENT = { en, fr }
 const STORAGE_KEY = 'lm-lang'
+const SITE_URL = 'https://lmtechsolutions.co'
 const FADE_MS = 160 // keep in sync with the transition in index.css
 
 // Pick the starting language: a ?lang= link wins, then the visitor's saved
@@ -82,8 +83,12 @@ export function LanguageProvider({ children }) {
   useEffect(() => {
     const t = CONTENT[shown]
     document.documentElement.lang = shown
-    document.title = t.meta.title
+    // The legal pages set their own title
+    if (!['#legal-notice', '#privacy-policy'].includes(window.location.hash)) document.title = t.meta.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', t.meta.description)
+    // Tell search engines which address is the main one for this language
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', `${SITE_URL}/${shown === 'en' ? '' : `?lang=${shown}`}`)
+    document.querySelector('meta[property="og:locale"]')?.setAttribute('content', shown === 'fr' ? 'fr_FR' : 'en_US')
   }, [shown])
 
   useEffect(() => {
