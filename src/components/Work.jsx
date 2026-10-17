@@ -24,6 +24,11 @@ export default function Work() {
                 <dt>What I did</dt>
                 <dd>{item.did}</dd>
               </dl>
+              <ul className="skills" aria-label="Skills used">
+                {item.skills.map((skill) => (
+                  <li key={skill}>{skill}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
