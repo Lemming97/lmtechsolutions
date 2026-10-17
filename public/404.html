@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <title>Redirecting | L&amp;M Technology Solutions</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // GitHub Pages shows this page for any address that doesn't exist.
+      // Send visitors to the matching part of the site instead:
+      //   /top, /services, /about ...      -> /#top, /#services, /#about
+      //   /privacy, /legal, French names   -> the legal pages
+      //   anything else (old links, typos) -> the home page
+      // A ?lang=fr in the address is kept.
+      ;(function () {
+        var ROUTES = {
+          '': '',
+          top: '#top',
+          home: '#top',
+          accueil: '#top',
+          index: '#top',
+          services: '#services',
+          work: '#work',
+          realisations: '#work',
+          projects: '#work',
+          process: '#process',
+          about: '#about',
+          'a-propos': '#about',
+          apropos: '#about',
+          contact: '#contact',
+          'legal-notice': '#legal-notice',
+          legal: '#legal-notice',
+          'mentions-legales': '#legal-notice',
+          mentions: '#legal-notice',
+          'privacy-policy': '#privacy-policy',
+          privacy: '#privacy-policy',
+          confidentialite: '#privacy-policy',
+          'politique-de-confidentialite': '#privacy-policy',
+        }
+        var slug = decodeURIComponent(window.location.pathname)
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[̀-ͯ]/g, '')
+          .replace(/\.html?$/, '')
+          .replace(/^\/+|\/+$/g, '')
+          .split('/')
+          .pop()
+        var hash = Object.prototype.hasOwnProperty.call(ROUTES, slug) ? ROUTES[slug] : ''
+        if (!hash && window.location.hash) hash = window.location.hash
+        window.location.replace('/' + window.location.search + hash)
+      })()
+    </script>
+    <noscript><meta http-equiv="refresh" content="0; url=/" /></noscript>
+    <style>
+      body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #F5F5FB; color: #1E1B4B; font-family: system-ui, sans-serif; text-align: center; padding: 16px; box-sizing: border-box; }
+      a { color: #4338A8; font-weight: 600; }
+    </style>
+  </head>
+  <body>
+    <p>Taking you to <a href="/">lmtechsolutions.co</a></p>
+  </body>
+</html>
