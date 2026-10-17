@@ -8,14 +8,15 @@ export function Sparkle({ size = 16, color = 'currentColor' }) {
   )
 }
 
-export default function Logo() {
+// tone="dark" is for dark backgrounds like the footer
+export default function Logo({ tone = 'light' }) {
   return (
-    <span className="logo">
+    <span className={tone === 'dark' ? 'logo logo-dark' : 'logo'}>
       <span className="logo-initials">L&amp;M</span>
       <span className="logo-divider" aria-hidden="true" />
       <span className="logo-name">Technology Solutions</span>
       <span className="logo-sparkle">
-        <Sparkle size={17} color="#1E9C70" />
+        <Sparkle size={17} color={tone === 'dark' ? '#5CC9A0' : '#1E9C70'} />
       </span>
     </span>
   )

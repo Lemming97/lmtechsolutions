@@ -138,8 +138,32 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 .contact .email { display: block; margin-top: 14px; color: #D2CFEA; font-size: .95rem; }
 .contact a:focus-visible { outline-color: #fff; }
 
-footer.site { background: var(--ink); color: #A6A3CC; font-size: .875rem; padding: 28px 0 36px; border-top: 1px solid rgba(255,255,255,.08); }
-footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+footer.site { background: var(--ink); color: #A6A3CC; font-size: .875rem; padding: 32px 0 64px; border-top: 1px solid rgba(255,255,255,.08); }
+footer.site .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+.footer-logo { justify-self: start; text-decoration: none; }
+.footer-copy { justify-self: center; text-align: center; }
+.footer-place { justify-self: end; text-align: right; position: relative; }
+/* LinkedIn hangs below the location without changing the row's alignment */
+.footer-place .footer-social { position: absolute; top: calc(100% + 10px); right: 0; white-space: nowrap; }
+.footer-social {
+  display: inline-flex; align-items: center; gap: 7px; color: #D2CFEA; text-decoration: none;
+  font-weight: 500; padding: 5px 11px 5px 9px; border-radius: 999px; background: rgba(227,225,247,.08);
+}
+.footer-social:hover { color: #fff; background: rgba(227,225,247,.16); }
+.footer-social:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+.logo-dark { background: rgba(227,225,247,.1); }
+.logo-dark .logo-initials { color: #fff; }
+.logo-dark .logo-divider { background: rgba(227,225,247,.35); }
+.logo-dark .logo-name { color: #D2CFEA; }
+.footer-logo:hover .logo-dark { background: rgba(227,225,247,.16); }
+.footer-logo:focus-visible { outline: 3px solid #fff; outline-offset: 4px; border-radius: 999px; }
+@media (max-width: 760px) {
+  footer.site .wrap { grid-template-columns: 1fr; justify-items: center; text-align: center; gap: 12px; }
+  .footer-logo, .footer-copy, .footer-place { justify-self: center; text-align: center; }
+  .footer-place { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .footer-place .footer-social { position: static; }
+  footer.site { padding-bottom: 36px; }
+}
 
 /* Load sequence: the layers settle into place from the bottom up */
 @media (prefers-reduced-motion: no-preference) {
@@ -212,8 +236,8 @@ footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wr
 }
 
 @media (max-width: 480px) {
-  .logo-divider, .logo-name { display: none; }
-  .logo { padding: 7px 16px; }
+  header.site .logo-divider, header.site .logo-name { display: none; }
+  header.site .logo { padding: 7px 16px; }
 }
 
 /* Language switcher */
