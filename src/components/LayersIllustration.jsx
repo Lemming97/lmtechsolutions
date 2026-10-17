@@ -57,7 +57,7 @@ export default function LayersIllustration({ layers }) {
       {/* Base layer: client solutions */}
       <g className="layer layer-3">
         <Slab cy={420} top="#E3E1F7" left="#B8B1EF" right="#CEC9F5" />
-        <g transform="translate(0,92)">
+        <g transform="translate(-3,91)">
           <rect x="190" y="306" width="46" height="30" rx="9" fill={PRI} />
           <path d="M200 336l-4 9 12-9" fill={PRI} />
           <rect x="250" y="318" width="40" height="26" rx="8" fill="#fff" stroke={PRI} strokeWidth="2.5" />
@@ -71,7 +71,7 @@ export default function LayersIllustration({ layers }) {
       {/* Middle layer: quality */}
       <g className="layer layer-2">
         <Slab cy={280} top="#DDF4EB" left="#9ED9C3" right="#BDE8D8" />
-        <g transform="translate(0,64)">
+        <g transform="translate(-7,70)">
           <rect x="215" y="183" width="42" height="52" rx="5" fill="#fff" stroke={MINT_DARK} strokeWidth="2.5" />
           {[0, 1, 2].map((i) => (
             <g key={i}>
@@ -95,7 +95,7 @@ export default function LayersIllustration({ layers }) {
       {/* Top layer: product */}
       <g className="layer layer-1">
         <Slab cy={140} top="#F1F0FB" left={LAV} right="#DCD9F7" />
-        <g transform="translate(0,22)">
+        <g transform="translate(-5.5,26)">
           <Note x={205} y={128} color="#FFE9A8" />
           <Note x={245} y={108} color="#D6F2E7" />
           <Note x={250} y={138} color={LAV} />
