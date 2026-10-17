@@ -162,14 +162,15 @@ export const work = {
 }
 
 export const process = {
-  title: 'How a project runs',
-  intro: 'Every engagement follows the same simple shape, whether it lasts two weeks or six months.',
+  title: 'How we work together',
+  intro: 'Every engagement starts the same way, then takes the shape your team needs.',
   steps: [
-    { title: 'Intro call', text: 'We talk through where you are, what is blocking you and what success looks like.' },
-    { title: 'Proposal', text: 'You get a written scope, timeline and price before any work starts.' },
-    { title: 'Build and test', text: 'I do the work with regular check ins, so there are no surprises at the end.' },
-    { title: 'Handover', text: 'Your team gets the documentation and processes to keep things running.' },
+    { title: 'Intro call', text: "We talk through where you are, what's blocking you and what success looks like." },
+    { title: 'Find the right fit', text: 'A defined project, a few months embedded with your team, or ongoing part-time support. We agree on scope, timing and rates up front.' },
+    { title: 'Work as part of your team', text: 'I join your tools and rituals, with regular check ins so there are no surprises.' },
+    { title: 'Smooth wrap-up', text: 'When an engagement ends, your team already has the documentation and processes to keep things running.' },
   ],
+  note: 'However we work, I document everything as I go, so your team is never stuck if I step away.',
 }
 
 export const about = {

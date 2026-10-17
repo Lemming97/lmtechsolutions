@@ -162,14 +162,15 @@ export const work = {
 }
 
 export const process = {
-  title: 'Le déroulement d’une mission',
-  intro: 'Chaque mission suit les mêmes étapes simples, qu’elle dure deux semaines ou six mois.',
+  title: 'Comment nous travaillons ensemble',
+  intro: 'Chaque mission commence de la même façon, puis prend la forme dont votre équipe a besoin.',
   steps: [
     { title: 'Appel découverte', text: 'Nous faisons le point sur votre situation, ce qui vous bloque et ce que serait un succès.' },
-    { title: 'Proposition', text: 'Vous recevez un périmètre, un calendrier et un prix écrits avant le début du travail.' },
-    { title: 'Réalisation et tests', text: 'Je réalise le travail avec des points réguliers, pour éviter toute surprise à la fin.' },
-    { title: 'Passation', text: 'Votre équipe reçoit la documentation et les processus pour assurer la suite.' },
+    { title: 'Trouver le bon format', text: 'Un projet défini, quelques mois en immersion dans votre équipe, ou un accompagnement régulier à temps partiel. Nous fixons ensemble le périmètre, le calendrier et le tarif dès le départ.' },
+    { title: 'Travailler au sein de votre équipe', text: 'Je rejoins vos outils et vos rituels, avec des points réguliers pour éviter toute surprise.' },
+    { title: 'Une fin de mission en douceur', text: 'À la fin de la mission, votre équipe dispose déjà de la documentation et des processus pour assurer la suite.' },
   ],
+  note: 'Quelle que soit la formule, je documente tout au fil de l’eau, pour que votre équipe ne soit jamais bloquée si je m’éloigne.',
 }
 
 export const about = {
