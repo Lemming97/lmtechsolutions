@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useI18n } from '../i18n.jsx'
-import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '../config.js'
+import { CONFIRMATION_SCRIPT_URL, CONFIRMATION_TOKEN, WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '../config.js'
 
 const EMPTY = { name: '', email: '', company: '', website: '', message: '' }
 const FIELDS = Object.keys(EMPTY)
@@ -27,6 +27,26 @@ export function normalizeWebsite(raw) {
   } catch {
     return null
   }
+}
+
+// Ask the Google Apps Script to email the visitor a confirmation. It runs in the
+// background: if it fails, the visitor has still reached you through Web3Forms.
+function sendConfirmation(clean, lang) {
+  if (!CONFIRMATION_SCRIPT_URL) return
+  fetch(CONFIRMATION_SCRIPT_URL, {
+    method: 'POST',
+    mode: 'no-cors',
+    keepalive: true,
+    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+    body: JSON.stringify({
+      token: CONFIRMATION_TOKEN,
+      lang,
+      name: clean.name,
+      email: clean.email,
+      company: clean.company,
+      message: clean.message,
+    }),
+  }).catch(() => {})
 }
 
 // Returns the error message for one field, or undefined if it's fine
@@ -186,6 +206,7 @@ export default function ContactModal({ open, onClose }) {
       const data = await res.json().catch(() => ({}))
       if (res.ok && data.success) {
         setStatus('sent')
+        sendConfirmation(clean, lang)
       } else {
         setFailure(res.status === 429 ? 'rateLimit' : 'other')
         setStatus('failed')
