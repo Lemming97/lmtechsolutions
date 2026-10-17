@@ -225,9 +225,14 @@ export const contactForm = {
   optional: 'Optional',
   errors: {
     required: 'Please fill in this field.',
-    email: 'Please enter a valid email address.',
-    website: 'Please enter a full web address, like https://example.com',
+    nameShort: 'Please enter your full name.',
+    email: 'Please enter a valid email address, like name@company.com',
+    website: 'Please enter a web address, like company.com',
+    messageShort: 'Please add a little more detail (at least {min} characters).',
+    tooLong: 'Please keep this under {max} characters.',
+    summary: 'Please fix the highlighted fields:',
   },
+  charCount: '{count} / {max}',
   submit: 'Send Message',
   sending: 'Sending...',
   cancel: 'Cancel',
@@ -237,6 +242,9 @@ export const contactForm = {
   mailtoTitle: 'Almost done',
   mailtoText: 'Your email app should open with your message ready to go. Just press send.',
   failText: "Something went wrong sending your message. Please try again, or email me directly at",
+  failOffline: "You appear to be offline. Check your internet connection and try again. Your message is still here.",
+  failTimeout: "The message took too long to send. Please try again. Your message is still here.",
+  failRateLimit: "Too many messages were sent in a short time. Please wait a minute and try again, or email me directly at",
   emailSubject: 'Project inquiry',
 }
 

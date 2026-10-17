@@ -225,9 +225,14 @@ export const contactForm = {
   optional: 'Facultatif',
   errors: {
     required: 'Merci de remplir ce champ.',
-    email: 'Merci de saisir une adresse e-mail valide.',
-    website: 'Merci de saisir une adresse web complète, par exemple https://exemple.fr',
+    nameShort: 'Merci de saisir votre nom complet.',
+    email: 'Merci de saisir une adresse e-mail valide, par exemple nom@entreprise.fr',
+    website: 'Merci de saisir une adresse web, par exemple entreprise.fr',
+    messageShort: 'Merci d’ajouter un peu plus de détails (au moins {min} caractères).',
+    tooLong: 'Merci de rester sous {max} caractères.',
+    summary: 'Merci de corriger les champs signalés :',
   },
+  charCount: '{count} / {max}',
   submit: 'Envoyer le Message',
   sending: 'Envoi...',
   cancel: 'Annuler',
@@ -237,6 +242,9 @@ export const contactForm = {
   mailtoTitle: 'Presque terminé',
   mailtoText: "Votre application e-mail devrait s'ouvrir avec votre message prêt à partir. Il ne reste plus qu'à l'envoyer.",
   failText: "Une erreur est survenue lors de l'envoi. Merci de réessayer, ou de m'écrire directement à",
+  failOffline: "Vous semblez hors ligne. Vérifiez votre connexion internet et réessayez. Votre message est toujours là.",
+  failTimeout: "L'envoi a pris trop de temps. Merci de réessayer. Votre message est toujours là.",
+  failRateLimit: "Trop de messages ont été envoyés en peu de temps. Merci de patienter une minute et de réessayer, ou de m'écrire directement à",
   emailSubject: 'Demande de projet',
 }
 
