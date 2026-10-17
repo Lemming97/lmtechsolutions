@@ -183,7 +183,14 @@ export const about = {
     { label: 'Founder', value: 'Lindsey Martin' },
     { label: 'Experience', value: '8+ years across product, QA and technical operations' },
     { label: 'Industries', value: 'Digital health, proptech, deep tech, consumer technology' },
-    { label: 'Education', value: 'MBA, HEC Paris. BA Psychology' },
+    {
+      label: 'Education',
+      value: [
+        'MBA, HEC Paris',
+        'Full-Stack Web Development Certificate, UC Berkeley Extension',
+        'BA Psychology, University of San Francisco',
+      ],
+    },
     { label: 'Based in', value: 'Paris, formerly San Francisco' },
   ],
   paragraphs: [

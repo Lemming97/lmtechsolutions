@@ -126,6 +126,8 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 .about-facts dl { margin: 0; }
 .about-facts dt { color: var(--slate); font-size: .9rem; }
 .about-facts dd { margin: 0 0 18px; font-weight: 600; }
+.about-facts dd.multi { margin-bottom: 6px; }
+.about-facts dd.multi:last-child { margin-bottom: 18px; }
 .about-facts dl > div:last-child dd { margin-bottom: 0; }
 .about-copy p { margin: 0 0 18px; max-width: 60ch; }
 

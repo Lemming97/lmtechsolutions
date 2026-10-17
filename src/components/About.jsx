@@ -9,7 +9,11 @@ export default function About() {
             {about.facts.map((fact) => (
               <div key={fact.label}>
                 <dt>{fact.label}</dt>
-                <dd>{fact.value}</dd>
+                {Array.isArray(fact.value) ? (
+                  fact.value.map((line) => <dd key={line} className="multi">{line}</dd>)
+                ) : (
+                  <dd>{fact.value}</dd>
+                )}
               </div>
             ))}
           </dl>
