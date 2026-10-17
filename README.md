@@ -30,13 +30,16 @@ The "Email Me" button opens a contact form. Submissions are sent through [Web3Fo
 
 If the key is ever removed, the form falls back to opening the visitor's email app with their message filled in.
 
+Visitors also get a branded confirmation email in their language, sent from your Google account by a small Google Apps Script. Setup steps are in `apps-script/README.md`.
+
 ## Project layout
 
 ```
 public/          files copied as is (CNAME for the custom domain, favicon)
 src/content/      site copy, one file per language
 src/i18n.jsx      language switching
-src/config.js     contact form setting
+src/config.js     contact form and confirmation email settings
+apps-script/     confirmation email script (runs in your Google account)
 src/components/  one component per section
 src/index.css    styles
 ```
