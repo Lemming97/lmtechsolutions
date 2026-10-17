@@ -78,7 +78,13 @@ export const stack = {
     { label: 'Mobile', tools: ['Xcode', 'Android Studio', 'Firebase'] },
     { label: 'Development', tools: ['React', 'JavaScript', 'HTML and CSS', 'GitHub', 'AWS'] },
     { label: 'Support', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
-    { label: 'Product and delivery', tools: ['Jira', 'Agile and Scrum'] },
+    {
+      label: 'Product and delivery',
+      tools: ['Jira', 'Confluence', 'Linear', 'Asana', 'ClickUp', 'Notion', 'Agile and Scrum'],
+    },
+    { label: 'Design and collaboration', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
+    { label: 'Analytics', tools: ['Amplitude', 'Mixpanel', 'Google Analytics', 'Hotjar'] },
+    { label: 'AI tools', tools: ['Claude', 'ChatGPT', 'Gemini'] },
   ],
 }
 
