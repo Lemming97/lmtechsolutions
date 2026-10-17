@@ -94,7 +94,7 @@ export const work = {
     'Product, research, client and quality work, with the skills each one used. Clients are described by industry to keep their details confidential.',
   items: [
     {
-      area: 'Product management',
+      area: 'Product Management',
       sector: 'Proptech, smart building access',
       metric: '0 to 1',
       metricLabel: 'new installer app, from prototype to build ready spec',
@@ -104,7 +104,7 @@ export const work = {
       skills: ['0 to 1 product', 'Prototyping', 'UX flows', 'Specs', 'Design handoff'],
     },
     {
-      area: 'Product management',
+      area: 'Product Management',
       sector: 'Proptech, SaaS and IoT',
       metric: '3 user groups',
       metricLabel: 'residents, building managers and installers',
@@ -114,7 +114,7 @@ export const work = {
       skills: ['PRDs', 'Prioritization', 'AI assisted development', 'Cross functional delivery'],
     },
     {
-      area: 'Product strategy and go to market',
+      area: 'Product Strategy and Go to Market',
       sector: 'Deep tech, space software',
       metric: '3 streams',
       metricLabel: 'of revenue framed into one model ahead of a seed round',
@@ -124,7 +124,7 @@ export const work = {
       skills: ['Positioning', 'Competitive analysis', 'Business model', 'Market sizing', 'Messaging'],
     },
     {
-      area: 'User research',
+      area: 'User Research',
       sector: 'Consumer technology',
       metric: 'Real users',
       metricLabel: 'testing new hardware and software before launch',
@@ -134,7 +134,7 @@ export const work = {
       skills: ['Usability testing', 'User interviews', 'Surveys', 'Research synthesis'],
     },
     {
-      area: 'Client solutions',
+      area: 'Client Solutions',
       sector: 'Digital health',
       metric: 'One contact',
       metricLabel: 'between clients, clinical teams and engineering',
@@ -144,7 +144,7 @@ export const work = {
       skills: ['Client onboarding', 'Stakeholder management', 'Requirements gathering', 'Training'],
     },
     {
-      area: 'Quality assurance',
+      area: 'Quality Assurance',
       sector: 'Digital health',
       metric: '80%',
       metricLabel: 'fewer bugs reaching production at one of them',
@@ -154,7 +154,7 @@ export const work = {
       skills: ['Test strategy', 'Release management', 'Automation', 'Team leadership'],
     },
     {
-      area: 'Support operations',
+      area: 'Support Operations',
       sector: 'Digital health',
       metric: 'Under 6h',
       metricLabel: 'response time on support tickets',
