@@ -5,6 +5,7 @@ export const site = {
   name: 'L&M Technology Solutions',
   legalName: 'L&M Technology Solutions LLC',
   email: 'contact@lmtechsolutions.co',
+  linkedin: 'https://www.linkedin.com/in/lindsey-m-2219abb0/',
   locations: 'Paris, France and United States',
 }
 
@@ -214,6 +215,7 @@ export const ui = {
   challenge: 'The challenge',
   whatIDid: 'What I did',
   skillsUsed: 'Skills used',
+  linkedin: 'LinkedIn profile',
   illustration: 'An illustration of three stacked layers',
 }
 
