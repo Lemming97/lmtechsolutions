@@ -198,14 +198,51 @@ footer.site .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-it
 }
 
 /* Tools */
-.stack { margin-top: 48px; padding-top: 28px; border-top: 2px solid var(--ink); }
-.stack h3 { font-size: 1.35rem; margin: 0 0 20px; letter-spacing: -.01em; }
-.stack dl { margin: 0; display: grid; gap: 14px; }
-.stack-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: baseline; }
-.stack dt { color: var(--slate); font-size: .95rem; }
+.stack { margin-top: 48px; padding-top: 28px; border-top: 2px solid var(--ink); --stack-peek: 56px; }
+.stack-head { display: flex; align-items: baseline; justify-content: space-between; gap: 8px 24px; flex-wrap: wrap; margin-bottom: 20px; }
+.stack h3 { font-size: 1.35rem; margin: 0; letter-spacing: -.01em; display: flex; align-items: center; gap: 8px; }
+.stack-hint { margin: 0; color: var(--slate); font-size: .9rem; }
+
+/* The deck: layers share one spot; the ones behind sit higher and smaller */
+.stack-deck { position: relative; }
+.stack-layer {
+  position: absolute; left: 0; right: 0; top: calc(var(--stack-peek) * 2);
+  border-radius: 16px; overflow: hidden; border: 1px solid rgba(30,27,75,.08);
+  background: var(--layer-bg); box-shadow: 0 10px 28px rgba(30,27,75,.10);
+  transform: translateY(calc(var(--stack-peek) * var(--depth) * -1)) scale(calc(1 - var(--depth) * .035));
+  transform-origin: 50% 0;
+  transition: transform .55s cubic-bezier(.2,.8,.2,1), height .45s ease, box-shadow .3s ease, filter .3s ease;
+}
+.stack-layer:not(.is-front) { filter: saturate(.85); }
+.stack-layer:not(.is-front):hover { box-shadow: 0 14px 34px rgba(30,27,75,.16); filter: none; }
+.stack-layer.is-front { box-shadow: 0 16px 40px rgba(30,27,75,.16); }
+.tone-product { --layer-bg: #E3E1F7; --layer-ac: #4338A8; }
+.tone-quality { --layer-bg: #DDF3EA; --layer-ac: #1E9C70; }
+.tone-solutions { --layer-bg: #E9E7F3; --layer-ac: #1E1B4B; }
+
+.stack-inner { padding: 0 26px 24px; }
+.stack-layer-head { height: var(--stack-peek); display: flex; align-items: center; justify-content: space-between; }
+.stack-layer-label { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.1rem; color: var(--layer-ac); }
+.stack-dot { width: 10px; height: 10px; border-radius: 3px; background: var(--layer-ac); transform: rotate(45deg); }
+.stack-count { font-size: .85rem; font-weight: 600; color: var(--slate); }
+.stack-layer-btn {
+  width: 32px; height: 32px; border-radius: 999px; border: 0; cursor: pointer;
+  display: grid; place-items: center; background: rgba(255,255,255,.7); color: var(--layer-ac);
+}
+/* The whole visible part of a layer behind is clickable */
+.stack-layer-btn::after { content: ""; position: absolute; inset: 0; }
+.stack-layer-btn:focus-visible { outline: 3px solid var(--layer-ac); outline-offset: 2px; }
+.stack-layer:not(.is-front):hover .stack-layer-btn { background: #fff; }
+
+.stack-rows { margin: 0; display: grid; gap: 12px; transition: opacity .3s ease; }
+.stack-layer:not(.is-front) .stack-rows { opacity: 0; }
+.stack-row { display: grid; grid-template-columns: 250px 1fr; gap: 14px; align-items: center; }
+.stack dt { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: .95rem; color: var(--ink); }
+.stack-icon { width: 36px; height: 36px; border-radius: 10px; background: #fff; color: var(--layer-ac); display: grid; place-items: center; flex-shrink: 0; }
 .stack dd { margin: 0; }
 .stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
-.stack li { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 10px; font-size: .95rem; font-weight: 500; }
+.stack li { background: #fff; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 12px; font-size: .9rem; font-weight: 500; }
+@media (prefers-reduced-motion: reduce) { .stack-layer, .stack-rows { transition: none; } }
 
 /* Recent work */
 .cases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -239,7 +276,8 @@ footer.site .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-it
   .case-featured { grid-template-columns: 1fr; padding: 28px; }
   .case-featured .metric { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
   .case-featured .metric strong { font-size: 2.6rem; }
-  .stack-row { grid-template-columns: 1fr; gap: 6px; }
+  .stack-row { grid-template-columns: 1fr; gap: 8px; }
+  .stack-inner { padding: 0 18px 20px; }
 }
 
 @media (max-width: 480px) {

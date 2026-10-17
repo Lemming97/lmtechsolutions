@@ -69,18 +69,35 @@ export const services = {
 
 export const stack = {
   title: 'Tools I work with',
-  groups: [
-    { label: 'Testing', tools: ['Cypress', 'Playwright', 'TestRail', 'BrowserStack', 'Datadog'] },
-    { label: 'Mobile', tools: ['Xcode', 'Android Studio', 'Firebase'] },
-    { label: 'Development', tools: ['React', 'JavaScript', 'HTML and CSS', 'GitHub', 'AWS'] },
-    { label: 'Support', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
+  hint: 'Click a layer to bring it to the front.',
+  showLayer: 'Show {layer} tools',
+  layers: [
     {
-      label: 'Product and delivery',
-      tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile and Scrum'],
+      label: 'Product',
+      tone: 'product',
+      groups: [
+        { label: 'Product and delivery', icon: 'board', tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile and Scrum'] },
+        { label: 'Design and collaboration', icon: 'palette', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
+        { label: 'Analytics', icon: 'chart', tools: ['Google Analytics', 'Google Search Console', 'SQL'] },
+        { label: 'AI tools', icon: 'sparkle', tools: ['Claude', 'Perplexity', 'Gemini'] },
+      ],
     },
-    { label: 'Design and collaboration', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
-    { label: 'Analytics', tools: ['Google Analytics', 'Google Search Console', 'SQL'] },
-    { label: 'AI tools', tools: ['Claude', 'Perplexity', 'Gemini'] },
+    {
+      label: 'Quality',
+      tone: 'quality',
+      groups: [
+        { label: 'Testing', icon: 'checklist', tools: ['Cypress', 'Playwright', 'TestRail', 'BrowserStack', 'Datadog'] },
+        { label: 'Mobile', icon: 'phone', tools: ['Xcode', 'Android Studio', 'Firebase'] },
+      ],
+    },
+    {
+      label: 'Solutions',
+      tone: 'solutions',
+      groups: [
+        { label: 'Development', icon: 'code', tools: ['React', 'JavaScript', 'HTML and CSS', 'GitHub', 'AWS'] },
+        { label: 'Support', icon: 'chat', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
+      ],
+    },
   ],
 }
 
