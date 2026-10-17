@@ -39,31 +39,31 @@ export const services = {
     'Bring me in for one area or across the whole product lifecycle. I work with startups and established companies, on a project basis or as an ongoing part of your team.',
   items: [
     {
-      title: 'Product strategy and management',
+      title: 'Product Strategy and Management',
       description:
         'Turning ideas and customer feedback into a clear plan your team can build, from first prototype to shipped feature.',
       bullets: ['Discovery and user research', 'Roadmaps, PRDs and prioritization', 'UX flows and design handoff'],
     },
     {
-      title: 'Quality assurance',
+      title: 'Quality Assurance',
       description:
         '8 years in QA, from testing releases while running support to leading web quality engineering. I set up testing processes that catch problems before your users do.',
       bullets: ['QA strategy, test plans and bug lifecycle', 'Manual, exploratory and automated testing', 'Release coordination and regression suites'],
     },
     {
-      title: 'Support operations',
+      title: 'Support Operations',
       description:
         'Setting up customer support that scales, so users get fast answers and your product team hears what is breaking.',
       bullets: ['Help centers and knowledge bases', 'Support teams, tiers and SLAs', 'Support reporting and feedback loops to product'],
     },
     {
-      title: 'Go to market and fundraising',
+      title: 'Go to Market and Fundraising',
       description:
         'Shaping how you explain your product to customers and investors, and planning how to reach them.',
       bullets: ['Positioning and messaging by audience', 'Investor narrative and pitch materials', 'Market and investor landscape research'],
     },
     {
-      title: 'Web development',
+      title: 'Web Development',
       description:
         'Fast, accessible websites and web apps, built in React with a full stack background.',
       bullets: ['Landing pages and company sites', 'Prototypes and MVPs', 'Multilingual sites for European markets'],
@@ -95,7 +95,7 @@ export const work = {
   items: [
     {
       area: 'Product Management',
-      sector: 'Proptech, smart building access',
+      sector: 'Proptech, Smart Building Access',
       metric: '0 to 1',
       metricLabel: 'new installer app, from prototype to build ready spec',
       title: 'Launching a new app for installers',
@@ -115,7 +115,7 @@ export const work = {
     },
     {
       area: 'Product Strategy and Go to Market',
-      sector: 'Deep tech, space software',
+      sector: 'Deep Tech, Space Software',
       metric: '3 streams',
       metricLabel: 'of revenue framed into one model ahead of a seed round',
       title: 'Repositioning a technical product for its market',
@@ -125,7 +125,7 @@ export const work = {
     },
     {
       area: 'User Research',
-      sector: 'Consumer technology',
+      sector: 'Consumer Technology',
       metric: 'Real users',
       metricLabel: 'testing new hardware and software before launch',
       title: 'Running usability studies for new products',
@@ -135,7 +135,7 @@ export const work = {
     },
     {
       area: 'Client Solutions',
-      sector: 'Digital health',
+      sector: 'Digital Health',
       metric: 'One contact',
       metricLabel: 'between clients, clinical teams and engineering',
       title: 'Turning client needs into product fixes',
@@ -145,7 +145,7 @@ export const work = {
     },
     {
       area: 'Quality Assurance',
-      sector: 'Digital health',
+      sector: 'Digital Health',
       metric: '80%',
       metricLabel: 'fewer bugs reaching production at one of them',
       title: 'Building and leading QA at three digital health companies',
@@ -155,7 +155,7 @@ export const work = {
     },
     {
       area: 'Support Operations',
-      sector: 'Digital health',
+      sector: 'Digital Health',
       metric: 'Under 6h',
       metricLabel: 'response time on support tickets',
       title: 'Scaling customer support',
