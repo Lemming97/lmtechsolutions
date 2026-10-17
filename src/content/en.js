@@ -85,7 +85,7 @@ export const stack = {
 }
 
 export const work = {
-  title: 'Selected work',
+  title: 'Selected Work',
   intro:
     'Product, research, client and quality work, with the skills each one used. Clients are described by industry to keep their details confidential.',
   items: [
