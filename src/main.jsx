@@ -2,6 +2,7 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 import { LanguageProvider } from './i18n.jsx'
+import { initAnalytics } from './analytics.js'
 // Fonts are bundled with the site instead of loaded from Google Fonts,
 // so visitors' browsers never contact Google (see the Privacy Policy).
 import '@fontsource/schibsted-grotesk/latin-400.css'
@@ -20,3 +21,5 @@ createRoot(document.getElementById('root')).render(
     </LanguageProvider>
   </StrictMode>,
 )
+
+initAnalytics()

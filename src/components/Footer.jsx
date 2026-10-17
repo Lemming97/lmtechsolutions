@@ -1,9 +1,10 @@
 import { useI18n } from '../i18n.jsx'
 import Logo from './Logo.jsx'
 import { LEGAL_HASHES } from './LegalPage.jsx'
+import { openConsentBanner } from '../consent.js'
 
 export default function Footer() {
-  const { site, ui, legalUi } = useI18n().t
+  const { site, ui, legalUi, cookieBanner } = useI18n().t
   return (
     <footer className="site">
       <div className="wrap">
@@ -15,6 +16,7 @@ export default function Footer() {
           <span className="footer-legal">
             <a href={LEGAL_HASHES.legal}>{legalUi.legal}</a>
             <a href={LEGAL_HASHES.privacy}>{legalUi.privacy}</a>
+            <button type="button" onClick={openConsentBanner}>{cookieBanner.settings}</button>
           </span>
         </div>
         <div className="footer-place">

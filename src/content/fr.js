@@ -289,8 +289,6 @@ export const legal = {
       heading: 'Hébergement',
       list: [
         'GitHub, Inc. (GitHub Pages)',
-        '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis',
-        'Téléphone : +1 415 857 5430',
         'https://github.com',
       ],
     },
@@ -341,7 +339,10 @@ export const privacy = {
         'votre message',
         'la langue dans laquelle vous consultiez le site',
       ],
-      after: ['Je ne demande rien d’autre, et le site n’a ni compte utilisateur, ni newsletter, ni publicité.'],
+      after: [
+        'Si vous acceptez les cookies, Google Analytics mesure aussi votre utilisation du site : pages consultées, localisation approximative (pays ou ville), type d’appareil et de navigateur, et provenance de la visite. Ces mesures sont agrégées et ne servent pas à vous identifier.',
+        'Je ne demande rien d’autre, et le site n’a ni compte utilisateur, ni newsletter, ni publicité.',
+      ],
     },
     {
       heading: 'Finalités et bases légales',
@@ -349,6 +350,7 @@ export const privacy = {
         'Répondre à votre demande et organiser un appel. Il s’agit de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).',
         'Vous envoyer un e-mail automatique confirmant la bonne réception de votre message. Cela relève de mon intérêt légitime à vous informer que votre message est bien arrivé (article 6.1.f du RGPD).',
         'Si nous travaillons ensemble, ces informations font ensuite partie de mes dossiers professionnels.',
+        'Comprendre comment les visiteurs utilisent le site afin de l’améliorer, avec Google Analytics. Uniquement si vous acceptez les cookies (article 6.1.a du RGPD), et vous pouvez retirer votre consentement à tout moment.',
       ],
     },
     {
@@ -357,6 +359,7 @@ export const privacy = {
       list: [
         'Web3Forms (Web3Creative, Inde) reçoit le formulaire et le transmet à ma boîte e-mail. Il conserve une copie des envois jusqu’à trois ans selon ses propres conditions.',
         'Google (Google Workspace) stocke les e-mails que je reçois et envoie l’e-mail de confirmation. Pour éviter les abus, le service de confirmation garde votre adresse e-mail en mémoire pendant 10 minutes.',
+        'Google Analytics (Google Ireland Limited) mesure la fréquentation du site, uniquement si vous acceptez les cookies. Les adresses IP ne sont pas conservées.',
         'GitHub (GitHub Pages, États-Unis) héberge le site. Comme tout hébergeur, il traite votre adresse IP pour afficher les pages et les sécuriser.',
       ],
       after: [
@@ -367,12 +370,14 @@ export const privacy = {
       heading: 'Durée de conservation',
       body: [
         'Je conserve les demandes jusqu’à trois ans après notre dernier échange, puis je les supprime. Si vous devenez client, les informations sont conservées pendant la durée imposée par la loi pour les documents commerciaux et comptables.',
+        'Les données Google Analytics sont conservées 14 mois, et ses cookies expirent au bout de 13 mois maximum.',
       ],
     },
     {
       heading: 'Cookies',
       body: [
-        'Ce site n’utilise ni cookies ni outils de suivi. Il mémorise votre choix de langue dans votre propre navigateur pour que le site s’ouvre dans la même langue la prochaine fois. Ce réglage ne quitte jamais votre appareil, et vous pouvez l’effacer à tout moment dans les paramètres de votre navigateur. Les polices sont servies par ce site, aucune requête n’est donc envoyée à Google Fonts.',
+        'Lors de votre première visite, un bandeau vous demande si vous acceptez les cookies Google Analytics (nommés _ga), qui mesurent l’utilisation du site. Si vous refusez, aucun n’est déposé et Google Analytics n’est pas chargé. Vous pouvez modifier votre choix à tout moment via le lien Paramètres des Cookies en bas de chaque page, et votre choix vous est redemandé au bout de six mois.',
+        'Le site mémorise aussi votre langue et votre choix concernant les cookies dans votre propre navigateur. Ces réglages sont nécessaires au fonctionnement du site tel que vous l’avez demandé, ne quittent jamais votre appareil et peuvent être effacés à tout moment dans les paramètres de votre navigateur. Les polices sont servies par ce site, aucune requête n’est donc envoyée à Google Fonts.',
       ],
     },
     {
@@ -395,4 +400,14 @@ export const legalUi = {
   privacy: 'Politique de Confidentialité',
   back: 'Retour à l’Accueil',
   formNote: 'Vos informations servent uniquement à vous répondre. Voir la',
+}
+
+// Bandeau de consentement aux cookies
+export const cookieBanner = {
+  label: 'Consentement aux cookies',
+  text: 'J’aimerais utiliser les cookies Google Analytics pour mesurer la fréquentation de ce site. Ils ne sont déposés que si vous acceptez.',
+  learnMore: 'Politique de Confidentialité',
+  accept: 'Accepter',
+  decline: 'Refuser',
+  settings: 'Paramètres des Cookies',
 }
