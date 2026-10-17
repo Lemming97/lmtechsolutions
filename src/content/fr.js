@@ -205,6 +205,40 @@ export const contact = {
   subject: 'Demande de projet',
 }
 
+// Contact form shown in a pop-up when visitors click the contact button
+export const contactForm = {
+  title: 'Parlez-moi de votre projet',
+  intro: 'Partagez quelques détails et je vous réponds sous deux jours ouvrés.',
+  fields: {
+    name: 'Votre nom',
+    email: 'E-mail professionnel',
+    company: "Nom de l'entreprise",
+    website: "Site web de l'entreprise",
+    message: 'Comment puis-je vous aider ?',
+  },
+  placeholders: {
+    website: 'https://',
+    message: 'Quelques phrases sur votre produit, où vous en êtes et ce dont vous avez besoin.',
+  },
+  required: 'Obligatoire',
+  optional: 'Facultatif',
+  errors: {
+    required: 'Merci de remplir ce champ.',
+    email: 'Merci de saisir une adresse e-mail valide.',
+    website: 'Merci de saisir une adresse web complète, par exemple https://exemple.fr',
+  },
+  submit: 'Envoyer le Message',
+  sending: 'Envoi...',
+  cancel: 'Annuler',
+  close: 'Fermer',
+  successTitle: 'Merci !',
+  successText: 'Votre message est bien parti. Je vous réponds sous deux jours ouvrés.',
+  mailtoTitle: 'Presque terminé',
+  mailtoText: "Votre application e-mail devrait s'ouvrir avec votre message prêt à partir. Il ne reste plus qu'à l'envoyer.",
+  failText: "Une erreur est survenue lors de l'envoi. Merci de réessayer, ou de m'écrire directement à",
+  emailSubject: 'Demande de projet',
+}
+
 // Short labels used inside components
 export const ui = {
   getInTouch: 'Me Contacter',

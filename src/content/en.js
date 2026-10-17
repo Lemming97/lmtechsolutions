@@ -205,6 +205,40 @@ export const contact = {
   subject: 'Project inquiry',
 }
 
+// Contact form shown in a pop-up when visitors click the contact button
+export const contactForm = {
+  title: 'Tell me about your project',
+  intro: "Share a few details and I'll get back to you within two business days.",
+  fields: {
+    name: 'Your name',
+    email: 'Work email',
+    company: 'Company name',
+    website: 'Company website',
+    message: 'What can I help with?',
+  },
+  placeholders: {
+    website: 'https://',
+    message: 'A few sentences on your product, where you are now and what you need help with.',
+  },
+  required: 'Required',
+  optional: 'Optional',
+  errors: {
+    required: 'Please fill in this field.',
+    email: 'Please enter a valid email address.',
+    website: 'Please enter a full web address, like https://example.com',
+  },
+  submit: 'Send Message',
+  sending: 'Sending...',
+  cancel: 'Cancel',
+  close: 'Close',
+  successTitle: 'Thank you!',
+  successText: "Your message is on its way. I'll reply within two business days.",
+  mailtoTitle: 'Almost done',
+  mailtoText: 'Your email app should open with your message ready to go. Just press send.',
+  failText: "Something went wrong sending your message. Please try again, or email me directly at",
+  emailSubject: 'Project inquiry',
+}
+
 // Short labels used inside components
 export const ui = {
   getInTouch: 'Get in Touch',

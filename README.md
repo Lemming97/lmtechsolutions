@@ -24,12 +24,21 @@ When you change a line in one, change the matching line in the other. The files 
 
 Visitors see French if their browser is set to French, English otherwise, and can switch with the EN / FR toggle in the header (their choice is remembered). You can also link straight to a language with `?lang=fr` or `?lang=en`.
 
+## Contact form
+
+The "Email Me" button opens a contact form. By default, submitting it opens the visitor's email app with their message filled in. To receive messages straight to your inbox instead:
+
+1. Create a free form at https://formspree.io and set it to send to your email.
+2. Copy the form link (it looks like `https://formspree.io/f/abcdwxyz`).
+3. Paste it into `FORM_ENDPOINT` in `src/config.js`.
+
 ## Project layout
 
 ```
 public/          files copied as is (CNAME for the custom domain, favicon)
 src/content/      site copy, one file per language
 src/i18n.jsx      language switching
+src/config.js     contact form setting
 src/components/  one component per section
 src/index.css    styles
 ```
