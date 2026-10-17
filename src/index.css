@@ -112,7 +112,7 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 .steps h3 { margin: 0 0 8px; font-size: 1.15rem; }
 .steps p { margin: 0; color: var(--slate); font-size: 1rem; }
 .steps-note {
-  margin: 44px 0 0; padding: 18px 22px; max-width: 70ch;
+  margin: 44px 0 0; padding: 18px 22px;
   background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--pass);
   border-radius: 8px; font-weight: 500;
 }
