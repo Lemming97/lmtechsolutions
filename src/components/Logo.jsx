@@ -1,15 +1,22 @@
-export default function Logo({ size = 30 }) {
+// L&M Technology Solutions logo: a lavender pill holding the name,
+// with a mint sparkle on the top right corner.
+export function Sparkle({ size = 16, color = 'currentColor' }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 30 30" aria-hidden="true">
-      <rect x="1" y="1" width="28" height="28" rx="7" fill="#17223A" />
-      <path
-        d="M9 15.5l4 4 8-9"
-        fill="none"
-        stroke="#5FD39A"
-        strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
+    <svg width={size} height={size} viewBox="0 0 20 20" aria-hidden="true">
+      <path d="M10 0C11 6 14 9 20 10C14 11 11 14 10 20C9 14 6 11 0 10C6 9 9 6 10 0Z" fill={color} />
     </svg>
+  )
+}
+
+export default function Logo() {
+  return (
+    <span className="logo">
+      <span className="logo-initials">L&amp;M</span>
+      <span className="logo-divider" aria-hidden="true" />
+      <span className="logo-name">Technology Solutions</span>
+      <span className="logo-sparkle">
+        <Sparkle size={17} color="#1E9C70" />
+      </span>
+    </span>
   )
 }

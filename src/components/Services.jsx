@@ -1,4 +1,5 @@
 import { services } from '../content.js'
+import Stack from './Stack.jsx'
 
 export default function Services() {
   return (
@@ -19,6 +20,7 @@ export default function Services() {
             </article>
           ))}
         </div>
+        <Stack />
       </div>
     </section>
   )
