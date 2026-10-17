@@ -289,8 +289,6 @@ export const legal = {
       heading: 'Hosting',
       list: [
         'GitHub, Inc. (GitHub Pages)',
-        '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States',
-        'Phone: +1 415 857 5430',
         'https://github.com',
       ],
     },
@@ -372,7 +370,8 @@ export const privacy = {
     {
       heading: 'Cookies',
       body: [
-        'This website does not use cookies or tracking tools. It remembers your language choice in your own browser so the site opens in the same language next time. That setting never leaves your device, and you can clear it at any time in your browser settings. The fonts are served from this website, so no request is sent to Google Fonts.',
+        'The first time you visit, a banner asks whether you accept cookies used to measure how visitors use the site. If you decline, none are set. You can change your choice at any time with the Cookie Settings link at the bottom of every page, and your choice is asked again after six months.',
+        'The site also remembers your language and your cookie choice in your own browser. These settings are needed for the site to work as you asked, never leave your device, and can be cleared at any time in your browser settings. The fonts are served from this website, so no request is sent to Google Fonts.',
       ],
     },
     {
@@ -395,4 +394,14 @@ export const legalUi = {
   privacy: 'Privacy Policy',
   back: 'Back to Home',
   formNote: 'I only use your details to reply to you. See the',
+}
+
+// Cookie consent banner
+export const cookieBanner = {
+  label: 'Cookie consent',
+  text: "I'd like to use cookies to measure how visitors use this site. They're only set if you accept.",
+  learnMore: 'Privacy Policy',
+  accept: 'Accept',
+  decline: 'Decline',
+  settings: 'Cookie Settings',
 }

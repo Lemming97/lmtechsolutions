@@ -289,8 +289,6 @@ export const legal = {
       heading: 'Hébergement',
       list: [
         'GitHub, Inc. (GitHub Pages)',
-        '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis',
-        'Téléphone : +1 415 857 5430',
         'https://github.com',
       ],
     },
@@ -372,7 +370,8 @@ export const privacy = {
     {
       heading: 'Cookies',
       body: [
-        'Ce site n’utilise ni cookies ni outils de suivi. Il mémorise votre choix de langue dans votre propre navigateur pour que le site s’ouvre dans la même langue la prochaine fois. Ce réglage ne quitte jamais votre appareil, et vous pouvez l’effacer à tout moment dans les paramètres de votre navigateur. Les polices sont servies par ce site, aucune requête n’est donc envoyée à Google Fonts.',
+        'Lors de votre première visite, un bandeau vous demande si vous acceptez les cookies servant à mesurer l’utilisation du site. Si vous refusez, aucun n’est déposé. Vous pouvez modifier votre choix à tout moment via le lien Paramètres des Cookies en bas de chaque page, et votre choix vous est redemandé au bout de six mois.',
+        'Le site mémorise aussi votre langue et votre choix concernant les cookies dans votre propre navigateur. Ces réglages sont nécessaires au fonctionnement du site tel que vous l’avez demandé, ne quittent jamais votre appareil et peuvent être effacés à tout moment dans les paramètres de votre navigateur. Les polices sont servies par ce site, aucune requête n’est donc envoyée à Google Fonts.',
       ],
     },
     {
@@ -395,4 +394,14 @@ export const legalUi = {
   privacy: 'Politique de Confidentialité',
   back: 'Retour à l’Accueil',
   formNote: 'Vos informations servent uniquement à vous répondre. Voir la',
+}
+
+// Bandeau de consentement aux cookies
+export const cookieBanner = {
+  label: 'Consentement aux cookies',
+  text: 'J’aimerais utiliser des cookies pour mesurer la fréquentation de ce site. Ils ne sont déposés que si vous acceptez.',
+  learnMore: 'Politique de Confidentialité',
+  accept: 'Accepter',
+  decline: 'Refuser',
+  settings: 'Paramètres des Cookies',
 }

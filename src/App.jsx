@@ -7,6 +7,7 @@ import Process from './components/Process.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
+import CookieBanner from './components/CookieBanner.jsx'
 import LegalPage, { LEGAL_HASHES } from './components/LegalPage.jsx'
 
 const PAGE_FOR_HASH = Object.fromEntries(Object.entries(LEGAL_HASHES).map(([page, hash]) => [hash, page]))
@@ -57,6 +58,7 @@ export default function App() {
         )}
       </main>
       <Footer />
+      <CookieBanner />
     </>
   )
 }
