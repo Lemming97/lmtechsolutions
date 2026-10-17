@@ -267,8 +267,7 @@ export const meta = {
     'Conseil en product management, assurance qualité et go-to-market par Lindsey Martin. Basée à Paris, au service d’équipes en Europe et aux États-Unis.',
 }
 
-// Pages légales, liées depuis le pied de page. Avant la mise en ligne,
-// remplacer [ADRESSE] et [TÉLÉPHONE] dans la section Éditeur (idem dans en.js).
+// Pages légales, liées depuis le pied de page.
 export const legal = {
   title: 'Mentions Légales',
   updated: 'Dernière mise à jour le 18 octobre 2026',
@@ -279,9 +278,7 @@ export const legal = {
         'Lindsey Martin EI (Entrepreneur individuel), nom commercial L&M Technology Solutions',
         'Statut : micro-entrepreneur immatriculée en France',
         'SIREN : 131 358 541',
-        'Adresse : [ADRESSE]',
         'E-mail : info@lmtechsolutions.co',
-        'Téléphone : [TÉLÉPHONE]',
       ],
     },
     {

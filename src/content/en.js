@@ -267,8 +267,7 @@ export const meta = {
     'Product management, quality assurance and go to market consulting from Lindsey Martin. Based in Paris, working with teams in Europe and the US.',
 }
 
-// Legal pages, linked from the footer. Before going live, replace [ADDRESS]
-// and [PHONE] in the Publisher section (same in fr.js).
+// Legal pages, linked from the footer.
 export const legal = {
   title: 'Legal Notice',
   updated: 'Last updated October 18, 2026',
@@ -279,9 +278,7 @@ export const legal = {
         'Lindsey Martin EI (Entrepreneur individuel), trading as L&M Technology Solutions',
         'Status: micro-entrepreneur registered in France',
         'SIREN: 131 358 541',
-        'Address: [ADDRESS]',
         'Email: info@lmtechsolutions.co',
-        'Phone: [PHONE]',
       ],
     },
     {
