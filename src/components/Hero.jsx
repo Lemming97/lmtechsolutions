@@ -1,7 +1,8 @@
-import { hero } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 import LayersIllustration from './LayersIllustration.jsx'
 
 export default function Hero() {
+  const { hero } = useI18n().t
   return (
     <section className="hero">
       <div className="wrap">

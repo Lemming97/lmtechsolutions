@@ -210,3 +210,21 @@ footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wr
   .logo-divider, .logo-name { display: none; }
   .logo { padding: 7px 16px; }
 }
+
+/* Language switcher */
+header.site .wrap { gap: 20px; }
+nav.primary { margin-left: auto; }
+.lang-switch { display: inline-flex; background: #E3E1F7; border-radius: 999px; padding: 3px; flex: none; }
+.lang-switch button {
+  font: inherit; font-size: .8rem; font-weight: 600; letter-spacing: .04em;
+  border: 0; background: transparent; color: var(--slate);
+  padding: 5px 10px; border-radius: 999px; cursor: pointer;
+}
+.lang-switch button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.lang-switch button:hover:not([aria-pressed="true"]) { color: var(--ink); }
+.lang-switch button:focus-visible { outline: 3px solid var(--blue); outline-offset: 2px; }
+@media (max-width: 480px) {
+  header.site .wrap { gap: 10px; }
+  .nav-cta { padding: 8px 12px; font-size: .9rem; }
+  .lang-switch button { padding: 5px 8px; }
+}

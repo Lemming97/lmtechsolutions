@@ -1,6 +1,7 @@
-import { contact, site } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 
 export default function Contact() {
+  const { contact, site } = useI18n().t
   const mailto = `mailto:${site.email}?subject=${encodeURIComponent(contact.subject)}`
   return (
     <section className="block contact" id="contact">

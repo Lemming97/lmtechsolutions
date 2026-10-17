@@ -1,6 +1,7 @@
-import { site } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 
 export default function Footer() {
+  const { site } = useI18n().t
   return (
     <footer className="site">
       <div className="wrap">

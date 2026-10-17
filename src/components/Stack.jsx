@@ -1,6 +1,7 @@
-import { stack } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 
 export default function Stack() {
+  const { stack } = useI18n().t
   return (
     <div className="stack">
       <h3>{stack.title}</h3>

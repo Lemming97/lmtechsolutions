@@ -1,6 +1,7 @@
-import { about } from '../content.js'
+import { useI18n } from '../i18n.jsx'
 
 export default function About() {
+  const { about } = useI18n().t
   return (
     <section className="block" id="about">
       <div className="wrap about">
