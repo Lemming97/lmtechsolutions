@@ -31,12 +31,15 @@ function Note({ x, y, color }) {
   return <polygon points={`${x},${y - 10} ${x + 18},${y - 1} ${x},${y + 8} ${x - 18},${y - 1}`} fill={color} />
 }
 
+// The leader line starts on the slab's outer right edge (x 410),
+// halfway down its 18px thickness, and the label is centered on the line.
 function Label({ y, title, text }) {
+  const lineY = y + 9
   return (
     <g className="layer-label">
-      <path d={`M412 ${y}h40`} stroke={RULE} strokeWidth="1.5" />
-      <text x="460" y={y - 2} className="layer-title">{title}</text>
-      <text x="460" y={y + 15} className="layer-text">{text}</text>
+      <path d={`M410 ${lineY}h42`} stroke={RULE} strokeWidth="1.5" />
+      <text x="460" y={lineY - 3} className="layer-title">{title}</text>
+      <text x="460" y={lineY + 14} className="layer-text">{text}</text>
     </g>
   )
 }
