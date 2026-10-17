@@ -18,8 +18,8 @@ export const hero = {
   headline: 'Build the right product, then ship it without surprises.',
   lede:
     "I'm Lindsey Martin, a product manager with 8+ years across product, QA and technical operations. I help companies plan their products, test them properly, support their customers and bring it all to market.",
-  primaryCta: { label: 'Book an intro call', href: '#contact' },
-  secondaryCta: { label: 'See services', href: '#services' },
+  primaryCta: { label: 'Book an Intro Call', href: '#contact' },
+  secondaryCta: { label: 'See Services', href: '#services' },
   // Labels for the layered illustration, top layer first
   layers: [
     { title: 'Product', text: 'Roadmaps and specs' },
@@ -201,13 +201,13 @@ export const about = {
 export const contact = {
   title: "Let's talk about your project",
   text: "Tell me a little about what you're working on. I'll reply within two business days to set up a 30 minute call.",
-  buttonLabel: 'Email me',
+  buttonLabel: 'Email Me',
   subject: 'Project inquiry',
 }
 
 // Short labels used inside components
 export const ui = {
-  getInTouch: 'Get in touch',
+  getInTouch: 'Get in Touch',
   home: 'home',
   mainNav: 'Main',
   language: 'Language',
