@@ -80,11 +80,11 @@ export const stack = {
     { label: 'Support', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
     {
       label: 'Product and delivery',
-      tools: ['Jira', 'Confluence', 'Linear', 'Asana', 'ClickUp', 'Notion', 'Agile and Scrum'],
+      tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile and Scrum'],
     },
     { label: 'Design and collaboration', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
-    { label: 'Analytics', tools: ['Amplitude', 'Mixpanel', 'Google Analytics', 'Hotjar'] },
-    { label: 'AI tools', tools: ['Claude', 'ChatGPT', 'Gemini'] },
+    { label: 'Analytics', tools: ['Google Analytics', 'SQL'] },
+    { label: 'AI tools', tools: ['Claude', 'Perplexity', 'Gemini'] },
   ],
 }
 
