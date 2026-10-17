@@ -97,8 +97,14 @@ function sendConfirmation({ email, lang, name, company, message }) {
     replyTo: CONFIG.replyTo,
     htmlBody: buildHtml(t, { firstName, company, message }),
   }
-  if (GmailApp.getAliases().indexOf(CONFIG.fromAlias) !== -1) options.from = CONFIG.fromAlias
+  if (hasFromAlias()) options.from = CONFIG.fromAlias
   GmailApp.sendEmail(email, t.subject, buildText(t, { firstName, company, message }), options)
+}
+
+// True when info@ is set up under Gmail > Settings > Accounts > Send mail as
+function hasFromAlias() {
+  const wanted = CONFIG.fromAlias.toLowerCase()
+  return GmailApp.getAliases().some((a) => a.toLowerCase() === wanted)
 }
 
 function checkLimits(email) {
@@ -204,6 +210,18 @@ function esc(text) {
 
 function reply(obj) {
   return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON)
+}
+
+// Run this from the editor to see which address visitors' emails come from.
+// The result shows in the Execution log at the bottom of the screen.
+function checkSetup() {
+  const aliases = GmailApp.getAliases()
+  console.log('Send mail as addresses Gmail gives this script: ' + (aliases.length ? aliases.join(', ') : 'none'))
+  console.log(
+    hasFromAlias()
+      ? 'Good: confirmations are sent from ' + CONFIG.fromAlias
+      : CONFIG.fromAlias + ' is not set up yet, so confirmations come from ' + Session.getEffectiveUser().getEmail(),
+  )
 }
 
 // Run this once from the editor: it asks for Gmail permission and sends both
