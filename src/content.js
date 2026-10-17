@@ -17,20 +17,15 @@ export const nav = [
 export const hero = {
   headline: 'Build the right product, then ship it without surprises.',
   lede:
-    "I'm Lindsey Martin, a product manager with 8 years of QA and support operations experience across health tech, proptech and deep tech. I help companies plan their products, test them properly, support their customers and bring it all to market.",
+    "I'm Lindsey Martin, a product manager with 8+ years across product, QA and technical operations. I help companies plan their products, test them properly, support their customers and bring it all to market.",
   primaryCta: { label: 'Book a free intro call', href: '#contact' },
   secondaryCta: { label: 'See services', href: '#services' },
-  testRun: {
-    file: 'launch-readiness.test',
-    target: 'your product',
-    checks: [
-      { label: 'requirements are clear', time: '0.4s' },
-      { label: 'roadmap agreed with the team', time: '0.7s' },
-      { label: 'app built and deployed', time: '1.2s' },
-      { label: 'bugs caught before users find them', time: '0.9s' },
-      { label: 'launch plan and first customers', time: '0.6s' },
-    ],
-  },
+  // Labels for the layered illustration, top layer first
+  layers: [
+    { title: 'Product', text: 'Roadmaps and specs' },
+    { title: 'Quality', text: 'Tested before launch' },
+    { title: 'Solutions', text: 'Clients supported' },
+  ],
 }
 
 export const services = {
