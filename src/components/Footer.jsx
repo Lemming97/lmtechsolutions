@@ -1,15 +1,22 @@
 import { useI18n } from '../i18n.jsx'
 import Logo from './Logo.jsx'
+import { LEGAL_HASHES } from './LegalPage.jsx'
 
 export default function Footer() {
-  const { site, ui } = useI18n().t
+  const { site, ui, legalUi } = useI18n().t
   return (
     <footer className="site">
       <div className="wrap">
         <a className="footer-logo" href="#top" aria-label={`${site.name}, ${ui.home}`}>
           <Logo tone="dark" />
         </a>
-        <span className="footer-copy">&copy; {new Date().getFullYear()} {site.legalName}</span>
+        <div className="footer-copy">
+          <span>&copy; {new Date().getFullYear()} {site.legalName}</span>
+          <span className="footer-legal">
+            <a href={LEGAL_HASHES.legal}>{legalUi.legal}</a>
+            <a href={LEGAL_HASHES.privacy}>{legalUi.privacy}</a>
+          </span>
+        </div>
         <div className="footer-place">
           <span>{site.locations}</span>
           <a

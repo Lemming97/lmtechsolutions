@@ -32,6 +32,12 @@ If the key is ever removed, the form falls back to opening the visitor's email a
 
 Visitors also get a branded confirmation email in their language, sent from your Google account by a small Google Apps Script. Setup steps are in `apps-script/README.md`.
 
+## Legal pages
+
+The Legal Notice (`#legal-notice`) and Privacy Policy (`#privacy-policy`) are linked from the footer and from the contact form. Their text is in the `legal` and `privacy` sections of `src/content/en.js` and `fr.js`. Update the Privacy Policy if you add a new service that receives visitor data, such as analytics.
+
+Fonts are bundled with the site (through `@fontsource`) rather than loaded from Google Fonts, so visitors' browsers never contact Google.
+
 ## Project layout
 
 ```

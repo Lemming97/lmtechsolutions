@@ -75,7 +75,7 @@ function validate(values, msgs) {
 // focus stays inside while it's open, and it returns to the button afterwards.
 export default function ContactModal({ open, onClose }) {
   const { lang, t } = useI18n()
-  const { site, contactForm: f } = t
+  const { site, contactForm: f, legalUi } = t
   const dialogRef = useRef(null)
   const [values, setValues] = useState(EMPTY)
   const [errors, setErrors] = useState({})
@@ -333,6 +333,9 @@ export default function ContactModal({ open, onClose }) {
                 )}
               </p>
             )}
+            <p className="cf-privacy">
+              {legalUi.formNote} <a href="#privacy-policy" onClick={onClose}>{legalUi.privacy}</a>.
+            </p>
             <div className="cf-actions">
               <button type="button" className="btn btn-ghost" onClick={onClose}>
                 {f.cancel}
