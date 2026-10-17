@@ -92,6 +92,7 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 /* Services: a ruled list, not a card grid */
 .services { display: grid; grid-template-columns: 1fr 1fr; column-gap: 64px; }
 .service { padding: 28px 0 32px; border-top: 2px solid var(--ink); }
+.service:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .service h3 { font-size: 1.35rem; margin: 0 0 10px; letter-spacing: -.01em; }
 .service p { margin: 0 0 16px; color: var(--slate); max-width: 50ch; }
 .service ul { margin: 0; padding: 0; list-style: none; }
@@ -161,4 +162,30 @@ footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wr
   .steps { grid-template-columns: 1fr; }
   .console { font-size: .78rem; padding: 18px; }
   .console .time { display: none; }
+}
+
+/* Tools */
+.stack { margin-top: 48px; padding-top: 28px; border-top: 2px solid var(--ink); }
+.stack h3 { font-size: 1.35rem; margin: 0 0 20px; letter-spacing: -.01em; }
+.stack dl { margin: 0; display: grid; gap: 14px; }
+.stack-row { display: grid; grid-template-columns: 200px 1fr; gap: 16px; align-items: baseline; }
+.stack dt { color: var(--slate); font-size: .95rem; }
+.stack dd { margin: 0; }
+.stack ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.stack li { background: var(--surface); border: 1px solid var(--rule); border-radius: 4px; padding: 3px 10px; font-size: .95rem; font-weight: 500; }
+
+/* Selected work */
+.cases { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+.case { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 28px; }
+.case .sector { margin: 0 0 8px; color: var(--blue); font-weight: 600; font-size: .9rem; }
+.case h3 { margin: 0 0 20px; font-size: 1.25rem; line-height: 1.25; letter-spacing: -.01em; }
+.case dl { margin: 0; }
+.case dt { font-weight: 700; font-size: .9rem; margin-top: 14px; }
+.case dt:first-child { margin-top: 0; }
+.case dd { margin: 4px 0 0; color: var(--slate); font-size: .975rem; }
+.case dd.result { color: var(--ink); font-weight: 500; padding-left: 12px; border-left: 3px solid var(--pass); }
+
+@media (max-width: 900px) {
+  .cases { grid-template-columns: 1fr; }
+  .stack-row { grid-template-columns: 1fr; gap: 6px; }
 }

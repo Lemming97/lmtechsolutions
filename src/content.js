@@ -10,14 +10,14 @@ export const site = {
 
 export const nav = [
   { label: 'Services', href: '#services' },
-  { label: 'How I work', href: '#process' },
+  { label: 'Work', href: '#work' },
   { label: 'About', href: '#about' },
 ]
 
 export const hero = {
-  headline: 'Software that works the first time your customers use it.',
+  headline: 'Build the right product, then ship it without surprises.',
   lede:
-    'I help companies plan, build, test and launch digital products. Quality assurance, product management, web development and go to market support, from one consultant who has done all four.',
+    "I'm Lindsey Martin, a product manager with 8 years of QA and support operations experience across health tech, proptech and deep tech. I help companies plan their products, test them properly, support their customers and bring it all to market.",
   primaryCta: { label: 'Book a free intro call', href: '#contact' },
   secondaryCta: { label: 'See services', href: '#services' },
   testRun: {
@@ -39,24 +39,91 @@ export const services = {
     'Bring me in for one area or across the whole product lifecycle. I work with startups and established companies, on a project basis or as an ongoing part of your team.',
   items: [
     {
+      title: 'Product strategy and management',
+      description:
+        'Turning ideas and customer feedback into a clear plan your team can build, from first prototype to shipped feature.',
+      bullets: ['Discovery and user research', 'Roadmaps, PRDs and prioritization', 'UX flows and design handoff'],
+    },
+    {
       title: 'Quality assurance',
-      description: 'Testing processes that catch problems early, so releases stop feeling risky.',
-      bullets: ['QA strategy and test plans', 'Manual and exploratory testing', 'Release checklists and bug triage'],
+      description:
+        '8 years in QA, from testing releases while running support to leading web quality engineering. I set up testing processes that catch problems before your users do.',
+      bullets: ['QA strategy, test plans and bug lifecycle', 'Manual, exploratory and automated testing', 'Release coordination and regression suites'],
     },
     {
-      title: 'Product management',
-      description: 'Turning ideas and customer feedback into a clear plan your team can build.',
-      bullets: ['Product discovery and user research', 'Roadmaps, specs and prioritization', 'Sprint planning and delivery'],
+      title: 'Support operations',
+      description:
+        'Setting up customer support that scales, so users get fast answers and your product team hears what is breaking.',
+      bullets: ['Help centers and knowledge bases', 'Support teams, tiers and SLAs', 'Support reporting and feedback loops to product'],
     },
     {
-      title: 'Web app development',
-      description: 'Websites and web applications built to be fast, accessible and easy to maintain.',
+      title: 'Go to market and fundraising',
+      description:
+        'Shaping how you explain your product to customers and investors, and planning how to reach them.',
+      bullets: ['Positioning and messaging by audience', 'Investor narrative and pitch materials', 'Market and investor landscape research'],
+    },
+    {
+      title: 'Web development',
+      description:
+        'Fast, accessible websites and web apps, built in React with a full stack background.',
       bullets: ['Landing pages and company sites', 'Prototypes and MVPs', 'Multilingual sites for European markets'],
     },
+  ],
+}
+
+export const stack = {
+  title: 'Tools I work with',
+  groups: [
+    { label: 'Testing', tools: ['Cypress', 'Playwright', 'TestRail', 'BrowserStack', 'Datadog'] },
+    { label: 'Mobile', tools: ['Xcode', 'Android Studio', 'Firebase'] },
+    { label: 'Development', tools: ['React', 'JavaScript', 'HTML and CSS', 'GitHub', 'AWS'] },
+    { label: 'Support', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
+    { label: 'Product and delivery', tools: ['Jira', 'Agile and Scrum'] },
+  ],
+}
+
+export const work = {
+  title: 'Selected work',
+  intro: 'A few recent projects. Client names are kept private.',
+  items: [
     {
-      title: 'Business development',
-      description: 'Getting your product in front of the right people and building early momentum.',
-      bullets: ['Go to market planning', 'Outreach and partnership development', 'Sales process setup for early teams'],
+      sector: 'Proptech, smart building access',
+      title: 'Taking a new installer app from 0 to 1',
+      problem:
+        'Contractors installing smart access hardware in new buildings had no guided way to install, pair and validate devices on site.',
+      did:
+        'Owned the product end to end: prototyping, UX flow mapping, specs and design handoff, then validated features on working branches with engineering.',
+      result:
+        'A full product spec ready for build, plus a formal bug lifecycle and testing cycle adopted across the company.',
+    },
+    {
+      sector: 'Digital health',
+      title: 'Building quality into web releases',
+      problem:
+        'Web releases across several product teams needed consistent testing and coordination to keep bugs out of production.',
+      did:
+        'Led web quality engineering and release coordination, built end to end test suites and monitoring, and set up an offshore regression team.',
+      result: 'Release processes that reduced the number of bugs reaching production.',
+    },
+    {
+      sector: 'Digital health',
+      title: 'Scaling customer support',
+      problem:
+        'A growing digital health app needed support that could keep up with patients, clients and clinical teams without slowing the product team down.',
+      did:
+        'Built the help center and knowledge base, set up an offshore team for tier 1 and tier 2 tickets, created support reporting, and tested every release alongside the QA team.',
+      result:
+        'Responses within 6 hours and resolutions within 12, with CSAT and ticket trend reporting feeding back into the product.',
+    },
+    {
+      sector: 'Deep tech, space software',
+      title: 'Preparing a seed round story',
+      problem:
+        'A highly technical spacecraft simulation platform needed to make sense to non technical investors ahead of its seed round.',
+      did:
+        'Rebuilt the investor narrative and pitch, wrote messaging for investor, enterprise and technical audiences, and mapped the EU and US investor landscape.',
+      result:
+        'A prioritized list of 25+ funds, benchmarks from 18 comparable seed rounds, and an outreach toolkit the founders could run on their own.',
     },
   ],
 }
@@ -76,14 +143,16 @@ export const about = {
   title: 'About',
   facts: [
     { label: 'Founder', value: 'Lindsey Martin' },
-    { label: 'Education', value: 'MBA, HEC Paris' },
+    { label: 'Experience', value: '8 years in QA and support operations' },
+    { label: 'Industries', value: 'Health tech, proptech, deep tech' },
+    { label: 'Education', value: 'MBA, HEC Paris. BA Psychology' },
+    { label: 'Languages', value: 'English, French' },
     { label: 'Based in', value: 'Paris, formerly San Francisco' },
-    { label: 'Works with', value: 'Teams in Europe and the US' },
   ],
   paragraphs: [
-    "I'm Lindsey, the founder of L&M Technology Solutions. My career has moved between QA leadership and product management at early stage tech companies, which taught me that most product problems start long before the first bug report.",
-    'I studied psychology before moving into tech, and it still shapes how I work: I start with how real people will use what you\'re building, then work backwards to the plan, the code and the tests.',
-    'After years in San Francisco I moved to Paris and completed my MBA at HEC. Today I help companies on both sides of the Atlantic build products they can be confident in.',
+    'I started in user research, running usability studies and working in university research labs while finishing my psychology degree. I moved into tech at a digital health company, where I built and ran support operations while testing every release, then moved into technical solutions and lead web quality engineering.',
+    'Since then I have led QA as a consultant, earned a full stack web development certificate from UC Berkeley Extension, completed my MBA at HEC Paris, and led 0 to 1 product work at a proptech startup.',
+    'That path means I look at a product from every side: the user, the code, the release and the business. Today I help companies on both sides of the Atlantic build products they can be confident in.',
   ],
 }
 
