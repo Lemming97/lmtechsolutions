@@ -5,7 +5,7 @@ import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '../config.js'
 
 const EMPTY = { name: '', email: '', company: '', website: '', message: '' }
 const FIELDS = Object.keys(EMPTY)
-const REQUIRED = ['name', 'email', 'message']
+const REQUIRED = ['name', 'email', 'company', 'website', 'message']
 const LIMITS = { name: 100, email: 254, company: 120, website: 200, message: 5000 }
 const MESSAGE_MIN = 20
 const EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/
@@ -173,12 +173,12 @@ export default function ContactModal({ open, onClose }) {
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
-          subject: `${f.emailSubject}: ${clean.company || clean.name}`,
+          subject: `${f.emailSubject}: ${clean.company}`,
           from_name: 'L&M Technology Solutions website',
           name: clean.name,
           email: clean.email,
-          company: clean.company || '-',
-          website: clean.website || '-',
+          company: clean.company,
+          website: clean.website,
           message: clean.message,
           language: lang,
         }),
