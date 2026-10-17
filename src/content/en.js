@@ -266,3 +266,136 @@ export const meta = {
   description:
     'Product management, quality assurance and go to market consulting from Lindsey Martin. Based in Paris, working with teams in Europe and the US.',
 }
+
+// Legal pages, linked from the footer. Before going live, replace [ADDRESS]
+// and [PHONE] in the Publisher section (same in fr.js).
+export const legal = {
+  title: 'Legal Notice',
+  updated: 'Last updated October 18, 2026',
+  sections: [
+    {
+      heading: 'Publisher',
+      list: [
+        'Lindsey Martin EI (Entrepreneur individuel), trading as L&M Technology Solutions',
+        'Status: micro-entrepreneur registered in France',
+        'SIREN: 131 358 541',
+        'Address: [ADDRESS]',
+        'Email: info@lmtechsolutions.co',
+        'Phone: [PHONE]',
+      ],
+    },
+    {
+      heading: 'Publication director',
+      body: ['Lindsey Martin'],
+    },
+    {
+      heading: 'Hosting',
+      list: [
+        'GitHub, Inc. (GitHub Pages)',
+        '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, United States',
+        'Phone: +1 415 857 5430',
+        'https://github.com',
+      ],
+    },
+    {
+      heading: 'United States clients',
+      body: [
+        'Work for clients in the United States may be contracted through L&M Technology Solutions LLC, a United States limited liability company owned by Lindsey Martin.',
+      ],
+    },
+    {
+      heading: 'Intellectual property',
+      body: [
+        'The text, logo, illustrations and design of this website belong to L&M Technology Solutions. Please ask before reusing any of them. Brand names of tools mentioned on the site belong to their owners.',
+      ],
+    },
+    {
+      heading: 'Liability',
+      body: [
+        'I take care to keep the information on this website accurate and up to date, but it is provided for general information and may change. Links to other websites are provided for convenience, and I am not responsible for their content.',
+      ],
+    },
+    {
+      heading: 'Personal data',
+      body: ['How the contact form handles your information is explained in the Privacy Policy.'],
+      link: 'privacy',
+    },
+  ],
+}
+
+export const privacy = {
+  title: 'Privacy Policy',
+  updated: 'Last updated October 18, 2026',
+  intro:
+    'This policy explains what happens to the information you share through this website. In short: I only collect what you send me through the contact form, I use it to reply to you, and I never sell it or use it for advertising.',
+  sections: [
+    {
+      heading: 'Who is responsible',
+      body: [
+        'Lindsey Martin EI, trading as L&M Technology Solutions (SIREN 131 358 541), is responsible for your personal data. You can reach me at info@lmtechsolutions.co.',
+      ],
+    },
+    {
+      heading: 'What I collect',
+      body: ['When you send the contact form, I receive:'],
+      list: [
+        'your name and email address',
+        'your company name and website',
+        'your message',
+        'the language you were viewing the site in',
+      ],
+      after: ['I do not ask for anything else, and the site has no accounts, newsletter or advertising.'],
+    },
+    {
+      heading: 'Why I use it',
+      list: [
+        'To reply to your enquiry and arrange a call. This is a step you ask for before a possible contract (GDPR article 6(1)(b)).',
+        'To send you an automatic email confirming I received your message. This is in my legitimate interest of letting you know your message arrived (GDPR article 6(1)(f)).',
+        'If we go on to work together, the information becomes part of our business records.',
+      ],
+    },
+    {
+      heading: 'Who else handles it',
+      body: ['A few services help run the site and the contact form. They only process your information to provide their service:'],
+      list: [
+        'Web3Forms (Web3Creative, India) receives the form and forwards it to my inbox. It keeps a copy of submissions for up to three years under its own terms.',
+        'Google (Google Workspace) stores the emails I receive and sends the confirmation email. To prevent misuse, the confirmation service remembers your email address for 10 minutes.',
+        'GitHub (GitHub Pages, United States) hosts the website. Like any web host, it processes your IP address to deliver the pages and keep them secure.',
+      ],
+      after: [
+        'Some of these providers are outside the European Union. Those transfers are covered by the European Commission’s Standard Contractual Clauses or the EU-US Data Privacy Framework.',
+      ],
+    },
+    {
+      heading: 'How long I keep it',
+      body: [
+        'I keep enquiries for up to three years after our last contact, then delete them. If you become a client, the information is kept as long as the law requires for business and accounting records.',
+      ],
+    },
+    {
+      heading: 'Cookies',
+      body: [
+        'This website does not use cookies or tracking tools. It remembers your language choice in your own browser so the site opens in the same language next time. That setting never leaves your device, and you can clear it at any time in your browser settings. The fonts are served from this website, so no request is sent to Google Fonts.',
+      ],
+    },
+    {
+      heading: 'Your rights',
+      body: [
+        'You can ask to see, correct or delete your information, ask me to limit how it is used, object to its use, or receive a copy of it. Email info@lmtechsolutions.co and I will reply within one month.',
+        'If you think your data has not been handled properly, you can file a complaint with the CNIL, the French data protection authority, at https://www.cnil.fr',
+      ],
+    },
+    {
+      heading: 'Changes',
+      body: ['If this policy changes, the new version will be posted on this page with an updated date.'],
+    },
+  ],
+}
+
+// Footer links and labels for the legal pages
+export const legalUi = {
+  legal: 'Legal Notice',
+  privacy: 'Privacy Policy',
+  back: 'Back to Home',
+  formNote: 'I only use your details to reply to you. See the',
+}

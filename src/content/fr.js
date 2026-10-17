@@ -266,3 +266,136 @@ export const meta = {
   description:
     'Conseil en product management, assurance qualité et go-to-market par Lindsey Martin. Basée à Paris, au service d’équipes en Europe et aux États-Unis.',
 }
+
+// Pages légales, liées depuis le pied de page. Avant la mise en ligne,
+// remplacer [ADRESSE] et [TÉLÉPHONE] dans la section Éditeur (idem dans en.js).
+export const legal = {
+  title: 'Mentions Légales',
+  updated: 'Dernière mise à jour le 18 octobre 2026',
+  sections: [
+    {
+      heading: 'Éditeur du site',
+      list: [
+        'Lindsey Martin EI (Entrepreneur individuel), nom commercial L&M Technology Solutions',
+        'Statut : micro-entrepreneur immatriculée en France',
+        'SIREN : 131 358 541',
+        'Adresse : [ADRESSE]',
+        'E-mail : info@lmtechsolutions.co',
+        'Téléphone : [TÉLÉPHONE]',
+      ],
+    },
+    {
+      heading: 'Directrice de la publication',
+      body: ['Lindsey Martin'],
+    },
+    {
+      heading: 'Hébergement',
+      list: [
+        'GitHub, Inc. (GitHub Pages)',
+        '88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis',
+        'Téléphone : +1 415 857 5430',
+        'https://github.com',
+      ],
+    },
+    {
+      heading: 'Clients aux États-Unis',
+      body: [
+        'Les missions pour des clients basés aux États-Unis peuvent être contractées via L&M Technology Solutions LLC, société à responsabilité limitée américaine détenue par Lindsey Martin.',
+      ],
+    },
+    {
+      heading: 'Propriété intellectuelle',
+      body: [
+        'Les textes, le logo, les illustrations et le design de ce site appartiennent à L&M Technology Solutions. Merci de demander l’autorisation avant toute réutilisation. Les noms des outils cités sur le site appartiennent à leurs propriétaires respectifs.',
+      ],
+    },
+    {
+      heading: 'Responsabilité',
+      body: [
+        'Je veille à ce que les informations de ce site soient exactes et à jour, mais elles sont fournies à titre indicatif et peuvent évoluer. Les liens vers d’autres sites sont proposés pour votre confort, et je ne suis pas responsable de leur contenu.',
+      ],
+    },
+    {
+      heading: 'Données personnelles',
+      body: ['Le traitement des informations envoyées via le formulaire de contact est expliqué dans la Politique de Confidentialité.'],
+      link: 'privacy',
+    },
+  ],
+}
+
+export const privacy = {
+  title: 'Politique de Confidentialité',
+  updated: 'Dernière mise à jour le 18 octobre 2026',
+  intro:
+    'Cette politique explique ce que deviennent les informations que vous partagez sur ce site. En résumé : je ne collecte que ce que vous m’envoyez via le formulaire de contact, je l’utilise pour vous répondre, et je ne le vends jamais ni ne l’utilise à des fins publicitaires.',
+  sections: [
+    {
+      heading: 'Responsable du traitement',
+      body: [
+        'Lindsey Martin EI, nom commercial L&M Technology Solutions (SIREN 131 358 541), est responsable de vos données personnelles. Vous pouvez me contacter à info@lmtechsolutions.co.',
+      ],
+    },
+    {
+      heading: 'Données collectées',
+      body: ['Lorsque vous envoyez le formulaire de contact, je reçois :'],
+      list: [
+        'votre nom et votre adresse e-mail',
+        'le nom et le site de votre entreprise',
+        'votre message',
+        'la langue dans laquelle vous consultiez le site',
+      ],
+      after: ['Je ne demande rien d’autre, et le site n’a ni compte utilisateur, ni newsletter, ni publicité.'],
+    },
+    {
+      heading: 'Finalités et bases légales',
+      list: [
+        'Répondre à votre demande et organiser un appel. Il s’agit de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).',
+        'Vous envoyer un e-mail automatique confirmant la bonne réception de votre message. Cela relève de mon intérêt légitime à vous informer que votre message est bien arrivé (article 6.1.f du RGPD).',
+        'Si nous travaillons ensemble, ces informations font ensuite partie de mes dossiers professionnels.',
+      ],
+    },
+    {
+      heading: 'Destinataires et sous-traitants',
+      body: ['Quelques services permettent le fonctionnement du site et du formulaire. Ils ne traitent vos informations que pour fournir leur service :'],
+      list: [
+        'Web3Forms (Web3Creative, Inde) reçoit le formulaire et le transmet à ma boîte e-mail. Il conserve une copie des envois jusqu’à trois ans selon ses propres conditions.',
+        'Google (Google Workspace) stocke les e-mails que je reçois et envoie l’e-mail de confirmation. Pour éviter les abus, le service de confirmation garde votre adresse e-mail en mémoire pendant 10 minutes.',
+        'GitHub (GitHub Pages, États-Unis) héberge le site. Comme tout hébergeur, il traite votre adresse IP pour afficher les pages et les sécuriser.',
+      ],
+      after: [
+        'Certains de ces prestataires sont situés hors de l’Union européenne. Ces transferts sont encadrés par les clauses contractuelles types de la Commission européenne ou par le Data Privacy Framework UE États-Unis.',
+      ],
+    },
+    {
+      heading: 'Durée de conservation',
+      body: [
+        'Je conserve les demandes jusqu’à trois ans après notre dernier échange, puis je les supprime. Si vous devenez client, les informations sont conservées pendant la durée imposée par la loi pour les documents commerciaux et comptables.',
+      ],
+    },
+    {
+      heading: 'Cookies',
+      body: [
+        'Ce site n’utilise ni cookies ni outils de suivi. Il mémorise votre choix de langue dans votre propre navigateur pour que le site s’ouvre dans la même langue la prochaine fois. Ce réglage ne quitte jamais votre appareil, et vous pouvez l’effacer à tout moment dans les paramètres de votre navigateur. Les polices sont servies par ce site, aucune requête n’est donc envoyée à Google Fonts.',
+      ],
+    },
+    {
+      heading: 'Vos droits',
+      body: [
+        'Vous pouvez demander à accéder à vos informations, les corriger ou les supprimer, en limiter l’utilisation, vous opposer à leur traitement ou en recevoir une copie. Écrivez à info@lmtechsolutions.co et je vous répondrai sous un mois.',
+        'Si vous estimez que vos données n’ont pas été traitées correctement, vous pouvez adresser une réclamation à la CNIL sur https://www.cnil.fr',
+      ],
+    },
+    {
+      heading: 'Modifications',
+      body: ['Si cette politique change, la nouvelle version sera publiée sur cette page avec une date mise à jour.'],
+    },
+  ],
+}
+
+// Liens du pied de page et libellés des pages légales
+export const legalUi = {
+  legal: 'Mentions Légales',
+  privacy: 'Politique de Confidentialité',
+  back: 'Retour à l’Accueil',
+  formNote: 'Vos informations servent uniquement à vous répondre. Voir la',
+}
