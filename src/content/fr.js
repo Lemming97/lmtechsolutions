@@ -69,18 +69,35 @@ export const services = {
 
 export const stack = {
   title: 'Les outils que j’utilise',
-  groups: [
-    { label: 'Tests', tools: ['Cypress', 'Playwright', 'TestRail', 'BrowserStack', 'Datadog'] },
-    { label: 'Mobile', tools: ['Xcode', 'Android Studio', 'Firebase'] },
-    { label: 'Développement', tools: ['React', 'JavaScript', 'HTML et CSS', 'GitHub', 'AWS'] },
-    { label: 'Support', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
+  hint: 'Cliquez sur une couche pour la faire passer devant.',
+  showLayer: 'Afficher les outils {layer}',
+  layers: [
     {
-      label: 'Produit et delivery',
-      tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile et Scrum'],
+      label: 'Produit',
+      tone: 'product',
+      groups: [
+        { label: 'Produit et delivery', icon: 'board', tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile et Scrum'] },
+        { label: 'Design et collaboration', icon: 'palette', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
+        { label: 'Analytics', icon: 'chart', tools: ['Google Analytics', 'Google Search Console', 'SQL'] },
+        { label: 'Outils IA', icon: 'sparkle', tools: ['Claude', 'Perplexity', 'Gemini'] },
+      ],
     },
-    { label: 'Design et collaboration', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
-    { label: 'Analytics', tools: ['Google Analytics', 'Google Search Console', 'SQL'] },
-    { label: 'Outils IA', tools: ['Claude', 'Perplexity', 'Gemini'] },
+    {
+      label: 'Qualité',
+      tone: 'quality',
+      groups: [
+        { label: 'Tests', icon: 'checklist', tools: ['Cypress', 'Playwright', 'TestRail', 'BrowserStack', 'Datadog'] },
+        { label: 'Mobile', icon: 'phone', tools: ['Xcode', 'Android Studio', 'Firebase'] },
+      ],
+    },
+    {
+      label: 'Solutions',
+      tone: 'solutions',
+      groups: [
+        { label: 'Développement', icon: 'code', tools: ['React', 'JavaScript', 'HTML et CSS', 'GitHub', 'AWS'] },
+        { label: 'Support', icon: 'chat', tools: ['Zendesk', 'Zendesk Explore', 'Handlebars'] },
+      ],
+    },
   ],
 }
 
