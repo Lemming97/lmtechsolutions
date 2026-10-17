@@ -57,7 +57,7 @@ export default function LayersIllustration({ layers }) {
       {/* Base layer: client solutions */}
       <g className="layer layer-3">
         <Slab cy={420} top="#E3E1F7" left="#B8B1EF" right="#CEC9F5" />
-        <g transform="translate(0,75)">
+        <g transform="translate(0,92)">
           <rect x="190" y="306" width="46" height="30" rx="9" fill={PRI} />
           <path d="M200 336l-4 9 12-9" fill={PRI} />
           <rect x="250" y="318" width="40" height="26" rx="8" fill="#fff" stroke={PRI} strokeWidth="2.5" />
