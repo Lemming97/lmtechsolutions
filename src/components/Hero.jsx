@@ -1,5 +1,5 @@
 import { hero } from '../content.js'
-import TestRun from './TestRun.jsx'
+import LayersIllustration from './LayersIllustration.jsx'
 
 export default function Hero() {
   return (
@@ -13,7 +13,9 @@ export default function Hero() {
             <a className="btn btn-ghost" href={hero.secondaryCta.href}>{hero.secondaryCta.label}</a>
           </div>
         </div>
-        <TestRun {...hero.testRun} />
+        <div className="hero-art">
+          <LayersIllustration layers={hero.layers} />
+        </div>
       </div>
     </section>
   )
