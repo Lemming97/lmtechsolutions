@@ -187,9 +187,9 @@ export const about = {
     { label: 'Based in', value: 'Paris, formerly San Francisco' },
   ],
   paragraphs: [
-    'I started in user research, running usability studies and working in university research labs while finishing my psychology degree. I moved into tech at a digital health company, where I built and ran support operations while testing every release, then moved into technical solutions and lead web quality engineering.',
-    'Since then I have led QA as a consultant, earned a full stack web development certificate from UC Berkeley Extension, completed my MBA at HEC Paris, and led 0 to 1 product work at a proptech startup.',
-    'That path means I look at a product from every side: the user, the code, the release and the business. Today I help companies on both sides of the Atlantic build products they can be confident in.',
+    'I started in user research, running usability studies and working in university research labs while finishing my psychology degree. I moved into tech at a digital health company, where I built and ran support operations, tested every release, then moved into technical solutions and led web quality engineering.',
+    'Since then, I have led QA as a consultant, earned a full-stack web development certificate from UC Berkeley Extension, completed my MBA at HEC Paris, and led 0-to-1 product work at a proptech startup.',
+    'That path means I look at a product from every side: the user, the code, the release, and the business. Today I help companies on both sides of the Atlantic build products they can be confident in.',
   ],
 }
 
