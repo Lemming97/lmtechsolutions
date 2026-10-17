@@ -145,10 +145,10 @@ export const work = {
     },
     {
       area: 'Quality assurance',
-      sector: 'Three companies, including digital health',
+      sector: 'Digital health',
       metric: '80%',
       metricLabel: 'fewer bugs reaching production at one of them',
-      title: 'Building and leading QA at three companies',
+      title: 'Building and leading QA at three digital health companies',
       problem: 'Each team needed reliable releases, and two of them had no formal testing process at all, so quality depended on ad hoc checks.',
       did: 'Set up and led QA: test strategy, Cypress and Playwright automation, Datadog monitoring, weekly bug bashes and an offshore regression team, all embedded in the product release cycle.',
       skills: ['Test strategy', 'Release management', 'Automation', 'Team leadership'],
