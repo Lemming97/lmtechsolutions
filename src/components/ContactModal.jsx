@@ -6,21 +6,47 @@ import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '../config.js'
 const EMPTY = { name: '', email: '', company: '', website: '', message: '' }
 const FIELDS = Object.keys(EMPTY)
 const REQUIRED = ['name', 'email', 'message']
-const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+const LIMITS = { name: 100, email: 254, company: 120, website: 200, message: 5000 }
+const MESSAGE_MIN = 20
+const EMAIL_RE = /^[^\s@]+@[^\s@.]+(\.[^\s@.]+)+$/
+const SEND_TIMEOUT_MS = 15000
 
-function validate(values, errors) {
-  const found = {}
-  for (const key of REQUIRED) {
-    if (!values[key].trim()) found[key] = errors.required
+const fill = (text, vars) => text.replace(/\{(\w+)\}/g, (_, k) => vars[k])
+
+// Turn "acme.com" or "www.acme.com" into "https://acme.com"; returns null if
+// the text isn't a usable web address.
+export function normalizeWebsite(raw) {
+  const text = raw.trim()
+  if (!text) return ''
+  const withScheme = /^https?:\/\//i.test(text) ? text : `https://${text}`
+  try {
+    const url = new URL(withScheme)
+    const host = url.hostname
+    const validHost = /^([a-z0-9-]+\.)+[a-z]{2,}$/i.test(host) && !host.split('.').some((p) => p.startsWith('-') || p.endsWith('-'))
+    return validHost && !/\s/.test(text) ? url.href.replace(/\/$/, '') : null
+  } catch {
+    return null
   }
-  if (values.email.trim() && !EMAIL_RE.test(values.email.trim())) found.email = errors.email
-  if (values.website.trim()) {
-    try {
-      const url = new URL(values.website.trim())
-      if (!/^https?:$/.test(url.protocol)) found.website = errors.website
-    } catch {
-      found.website = errors.website
-    }
+}
+
+// Returns the error message for one field, or undefined if it's fine
+function checkField(key, value, msgs) {
+  const v = value.trim()
+  if (REQUIRED.includes(key) && !v) return msgs.required
+  if (!v) return undefined
+  if (v.length > LIMITS[key]) return fill(msgs.tooLong, { max: LIMITS[key] })
+  if (key === 'name' && v.length < 2) return msgs.nameShort
+  if (key === 'email' && !EMAIL_RE.test(v)) return msgs.email
+  if (key === 'website' && normalizeWebsite(v) === null) return msgs.website
+  if (key === 'message' && v.length < MESSAGE_MIN) return fill(msgs.messageShort, { min: MESSAGE_MIN })
+  return undefined
+}
+
+function validate(values, msgs) {
+  const found = {}
+  for (const key of FIELDS) {
+    const err = checkField(key, values[key], msgs)
+    if (err) found[key] = err
   }
   return found
 }
@@ -33,7 +59,12 @@ export default function ContactModal({ open, onClose }) {
   const dialogRef = useRef(null)
   const [values, setValues] = useState(EMPTY)
   const [errors, setErrors] = useState({})
+  const [touched, setTouched] = useState({})
+  const [showSummary, setShowSummary] = useState(false)
+  const [submitted, setSubmitted] = useState(false)
   const [status, setStatus] = useState('idle') // idle | sending | sent | mailto | failed
+  const [failure, setFailure] = useState('') // offline | timeout | rateLimit | other
+  const summaryRef = useRef(null)
 
   useEffect(() => {
     const dialog = dialogRef.current
@@ -41,6 +72,9 @@ export default function ContactModal({ open, onClose }) {
     if (open && !dialog.open) {
       setStatus('idle')
       setErrors({})
+      setTouched({})
+      setShowSummary(false)
+      setSubmitted(false)
       dialog.showModal()
       requestAnimationFrame(() => dialog.querySelector('#cf-name')?.focus())
     } else if (!open && dialog.open) {
@@ -50,27 +84,58 @@ export default function ContactModal({ open, onClose }) {
 
   // Clear the form once a message has gone out and the dialog closes
   useEffect(() => {
-    if (!open && (status === 'sent' || status === 'mailto')) setValues(EMPTY)
+    if (!open && (status === 'sent' || status === 'mailto')) {
+      setValues(EMPTY)
+      setTouched({})
+    }
   }, [open, status])
 
+  // Errors appear when a visitor leaves a field, then update live as they fix it
   function update(key) {
     return (e) => {
-      setValues((v) => ({ ...v, [key]: e.target.value }))
-      if (errors[key]) setErrors((err) => ({ ...err, [key]: undefined }))
+      const value = e.target.value
+      setValues((v) => ({ ...v, [key]: value }))
+      if (touched[key] || errors[key]) {
+        setErrors((err) => ({ ...err, [key]: checkField(key, value, f.errors) }))
+      }
+      if (status === 'failed') setStatus('idle')
+    }
+  }
+
+  function leave(key) {
+    return (e) => {
+      setTouched((tch) => ({ ...tch, [key]: true }))
+      let value = e.target.value
+      if (key === 'website' && value.trim()) {
+        const normalized = normalizeWebsite(value)
+        if (normalized) {
+          value = normalized
+          setValues((v) => ({ ...v, website: normalized }))
+        }
+      }
+      // Don't nag about empty required fields until the visitor tries to send
+      const err = checkField(key, value, f.errors)
+      const emptyRequired = !value.trim() && REQUIRED.includes(key)
+      setErrors((prev) => ({ ...prev, [key]: emptyRequired && !submitted ? undefined : err }))
     }
   }
 
   async function submit(e) {
     e.preventDefault()
+    if (status === 'sending') return
+    setSubmitted(true)
     const found = validate(values, f.errors)
     setErrors(found)
-    const first = FIELDS.find((k) => found[k])
-    if (first) {
-      dialogRef.current?.querySelector(`[name="${first}"]`)?.focus()
+    setTouched(Object.fromEntries(FIELDS.map((k) => [k, true])))
+    if (FIELDS.some((k) => found[k])) {
+      setShowSummary(true)
+      requestAnimationFrame(() => summaryRef.current?.focus())
       return
     }
+    setShowSummary(false)
 
     const clean = Object.fromEntries(FIELDS.map((k) => [k, values[k].trim()]))
+    if (clean.website) clean.website = normalizeWebsite(clean.website)
     // Hidden spam trap: real visitors never see or fill this field
     if (e.target.elements.botcheck?.checked) {
       setStatus('sent')
@@ -91,10 +156,20 @@ export default function ContactModal({ open, onClose }) {
       return
     }
 
+    if (typeof navigator !== 'undefined' && navigator.onLine === false) {
+      setFailure('offline')
+      setStatus('failed')
+      return
+    }
+
     setStatus('sending')
+    setFailure('')
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), SEND_TIMEOUT_MS)
     try {
       const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
+        signal: controller.signal,
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: WEB3FORMS_ACCESS_KEY,
@@ -109,9 +184,18 @@ export default function ContactModal({ open, onClose }) {
         }),
       })
       const data = await res.json().catch(() => ({}))
-      setStatus(res.ok && data.success ? 'sent' : 'failed')
-    } catch {
+      if (res.ok && data.success) {
+        setStatus('sent')
+      } else {
+        setFailure(res.status === 429 ? 'rateLimit' : 'other')
+        setStatus('failed')
+      }
+    } catch (err) {
+      const offline = typeof navigator !== 'undefined' && navigator.onLine === false
+      setFailure(err?.name === 'AbortError' ? 'timeout' : offline ? 'offline' : 'other')
       setStatus('failed')
+    } finally {
+      clearTimeout(timer)
     }
   }
 
@@ -126,6 +210,8 @@ export default function ContactModal({ open, onClose }) {
       name: key,
       value: values[key],
       onChange: update(key),
+      onBlur: leave(key),
+      maxLength: LIMITS[key] + 50,
       'aria-invalid': errors[key] ? 'true' : undefined,
       'aria-describedby': errors[key] ? errorId : undefined,
       required,
@@ -138,7 +224,12 @@ export default function ContactModal({ open, onClose }) {
           {f.fields[key]}
           <span className="cf-hint">{required ? f.required : f.optional}</span>
         </label>
-        {multiline ? <textarea rows={5} {...common} /> : <input type={type} {...common} />}
+        {multiline ? <textarea rows={5} {...common} /> : <input type={key === 'website' ? 'text' : type} inputMode={key === 'website' ? 'url' : undefined} {...common} />}
+        {multiline && (
+          <p className={`cf-count${values[key].length > LIMITS[key] ? ' over' : ''}`} aria-hidden="true">
+            {fill(f.charCount, { count: values[key].length, max: LIMITS[key] })}
+          </p>
+        )}
         {errors[key] && (
           <p className="cf-error" id={errorId}>
             {errors[key]}
@@ -182,6 +273,26 @@ export default function ContactModal({ open, onClose }) {
             <input type="checkbox" name="botcheck" className="cf-trap" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <h2 id="cf-title">{f.title}</h2>
             <p className="cf-intro">{f.intro}</p>
+            {showSummary && FIELDS.some((k) => errors[k]) && (
+              <div className="cf-summary" role="alert" tabIndex={-1} ref={summaryRef}>
+                <p>{f.errors.summary}</p>
+                <ul>
+                  {FIELDS.filter((k) => errors[k]).map((k) => (
+                    <li key={k}>
+                      <a
+                        href={`#cf-${k}`}
+                        onClick={(e) => {
+                          e.preventDefault()
+                          dialogRef.current?.querySelector(`#cf-${k}`)?.focus()
+                        }}
+                      >
+                        {f.fields[k]}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
             <div className="cf-grid">
               {field('name', { autoComplete: 'name' })}
               {field('email', { type: 'email', autoComplete: 'email' })}
@@ -191,7 +302,14 @@ export default function ContactModal({ open, onClose }) {
             </div>
             {status === 'failed' && (
               <p className="cf-error cf-fail" role="alert">
-                {f.failText} <a href={`mailto:${site.email}`}>{site.email}</a>.
+                {failure === 'offline' && f.failOffline}
+                {failure === 'timeout' && f.failTimeout}
+                {(failure === 'rateLimit' || failure === 'other' || !failure) && (
+                  <>
+                    {failure === 'rateLimit' ? f.failRateLimit : f.failText}{' '}
+                    <a href={`mailto:${site.email}`}>{site.email}</a>.
+                  </>
+                )}
               </p>
             )}
             <div className="cf-actions">
