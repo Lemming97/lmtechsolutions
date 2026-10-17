@@ -339,7 +339,10 @@ export const privacy = {
         'your message',
         'the language you were viewing the site in',
       ],
-      after: ['I do not ask for anything else, and the site has no accounts, newsletter or advertising.'],
+      after: [
+        'If you accept cookies, Google Analytics also records how you use the site: pages viewed, approximate location (country or city), device and browser type, and how you arrived. This is measured in aggregate and is not used to identify you.',
+        'I do not ask for anything else, and the site has no accounts, newsletter or advertising.',
+      ],
     },
     {
       heading: 'Why I use it',
@@ -347,6 +350,7 @@ export const privacy = {
         'To reply to your enquiry and arrange a call. This is a step you ask for before a possible contract (GDPR article 6(1)(b)).',
         'To send you an automatic email confirming I received your message. This is in my legitimate interest of letting you know your message arrived (GDPR article 6(1)(f)).',
         'If we go on to work together, the information becomes part of our business records.',
+        'To understand how visitors use the site and improve it, with Google Analytics. This only happens if you accept cookies (GDPR article 6(1)(a)), and you can withdraw your consent at any time.',
       ],
     },
     {
@@ -355,6 +359,7 @@ export const privacy = {
       list: [
         'Web3Forms (Web3Creative, India) receives the form and forwards it to my inbox. It keeps a copy of submissions for up to three years under its own terms.',
         'Google (Google Workspace) stores the emails I receive and sends the confirmation email. To prevent misuse, the confirmation service remembers your email address for 10 minutes.',
+        'Google Analytics (Google Ireland Limited) measures site visits, only if you accept cookies. IP addresses are not stored.',
         'GitHub (GitHub Pages, United States) hosts the website. Like any web host, it processes your IP address to deliver the pages and keep them secure.',
       ],
       after: [
@@ -365,12 +370,13 @@ export const privacy = {
       heading: 'How long I keep it',
       body: [
         'I keep enquiries for up to three years after our last contact, then delete them. If you become a client, the information is kept as long as the law requires for business and accounting records.',
+        'Google Analytics data is kept for 14 months, and its cookies expire after 13 months at most.',
       ],
     },
     {
       heading: 'Cookies',
       body: [
-        'The first time you visit, a banner asks whether you accept cookies used to measure how visitors use the site. If you decline, none are set. You can change your choice at any time with the Cookie Settings link at the bottom of every page, and your choice is asked again after six months.',
+        'The first time you visit, a banner asks whether you accept Google Analytics cookies (named _ga), which measure how visitors use the site. If you decline, none are set and Google Analytics is not loaded. You can change your choice at any time with the Cookie Settings link at the bottom of every page, and your choice is asked again after six months.',
         'The site also remembers your language and your cookie choice in your own browser. These settings are needed for the site to work as you asked, never leave your device, and can be cleared at any time in your browser settings. The fonts are served from this website, so no request is sent to Google Fonts.',
       ],
     },
@@ -399,7 +405,7 @@ export const legalUi = {
 // Cookie consent banner
 export const cookieBanner = {
   label: 'Cookie consent',
-  text: "I'd like to use cookies to measure how visitors use this site. They're only set if you accept.",
+  text: "I'd like to use Google Analytics cookies to see how visitors use this site. They're only set if you accept.",
   learnMore: 'Privacy Policy',
   accept: 'Accept',
   decline: 'Decline',

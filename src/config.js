@@ -13,3 +13,8 @@ export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
 export const CONFIRMATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkAx37wC97voU16nFfwh_UAXRAHbCSwwthwgBBQExQlOK9Ow_iJCzBiqPGQbSyI3wh/exec'
 // Must match CONFIG.token in apps-script/Code.gs
 export const CONFIRMATION_TOKEN = 'lm-confirm-7f3a9c'
+
+// Google Analytics 4 measurement ID (looks like G-XXXXXXXXXX). Analytics only
+// loads for visitors who click Accept on the cookie banner. Leave it empty to
+// turn analytics off.
+export const GA_MEASUREMENT_ID = ''

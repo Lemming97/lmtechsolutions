@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import Header from './components/Header.jsx'
 import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
@@ -8,6 +8,7 @@ import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
 import CookieBanner from './components/CookieBanner.jsx'
+import { trackPage } from './analytics.js'
 import LegalPage, { LEGAL_HASHES } from './components/LegalPage.jsx'
 
 const PAGE_FOR_HASH = Object.fromEntries(Object.entries(LEGAL_HASHES).map(([page, hash]) => [hash, page]))
@@ -39,6 +40,17 @@ export default function App() {
       window.scrollTo({ top: 0, behavior: 'instant' })
     }
   }, [page, hash])
+
+  // Count a page view when moving between the home page and the legal pages
+  // (after the page has set its title)
+  const firstRender = useRef(true)
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false
+      return
+    }
+    trackPage()
+  }, [page])
 
   return (
     <>
