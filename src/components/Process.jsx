@@ -15,6 +15,7 @@ export default function Process() {
             </li>
           ))}
         </ol>
+        {process.note && <p className="steps-note">{process.note}</p>}
       </div>
     </section>
   )
