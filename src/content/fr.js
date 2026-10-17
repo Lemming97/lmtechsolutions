@@ -19,7 +19,7 @@ export const hero = {
   headline: 'Construire le bon produit, puis le lancer sans mauvaises surprises.',
   lede:
     "Je suis Lindsey Martin, product manager avec plus de 8 ans d'expérience en produit, QA et opérations techniques. J'aide les entreprises à planifier leurs produits, à les tester correctement, à accompagner leurs clients et à mettre le tout sur le marché.",
-  primaryCta: { label: 'Réserver un Appel Découverte', href: '#contact' },
+  primaryCta: { label: 'Demander un Appel Découverte', href: '#contact' },
   secondaryCta: { label: 'Voir les Services', href: '#services' },
   // Labels for the layered illustration, top layer first
   layers: [
