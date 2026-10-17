@@ -89,47 +89,54 @@ export const stack = {
 }
 
 export const work = {
-  title: 'Selected work',
-  intro: 'A few recent projects. Client names are kept private.',
+  title: 'Recent work',
+  intro:
+    'Results from recent product, QA, support and go to market projects. Clients are described by industry to keep their details confidential.',
   items: [
     {
+      area: 'Quality assurance',
+      sector: 'Digital health',
+      metric: '80%',
+      metricLabel: 'fewer bugs reaching production',
+      title: 'Building a web QA function from scratch',
+      problem: 'No formal testing team existed, and bugs regularly made it into releases used by patients and clinical teams.',
+      did: 'Set up test planning, Cypress automation, Datadog monitoring and weekly bug bashes, and recruited and trained an offshore regression team.',
+    },
+    {
+      area: 'Product management',
       sector: 'Proptech, smart building access',
-      title: 'Taking a new installer app from 0 to 1',
-      problem:
-        'Contractors installing smart access hardware in new buildings had no guided way to install, pair and validate devices on site.',
-      did:
-        'Owned the product end to end: prototyping, UX flow mapping, specs and design handoff, then validated features on working branches with engineering.',
-      result:
-        'A full product spec ready for build, plus a formal bug lifecycle and testing cycle adopted across the company.',
+      metric: '0 to 1',
+      metricLabel: 'new installer app, prototype to shipped spec',
+      title: 'Launching a new app for installers',
+      problem: 'Contractors installing smart access hardware in new buildings had no guided way to install, pair and validate devices on site.',
+      did: 'Owned the product end to end, from prototyping and UX flows to PRDs and design handoff, and formalized the bug lifecycle and testing cycle for the company.',
     },
     {
-      sector: 'Digital health',
-      title: 'Building quality into web releases',
-      problem:
-        'Web releases across several product teams needed consistent testing and coordination to keep bugs out of production.',
-      did:
-        'Led web quality engineering and release coordination, built end to end test suites and monitoring, and set up an offshore regression team.',
-      result: 'Release processes that reduced the number of bugs reaching production.',
-    },
-    {
-      sector: 'Digital health',
-      title: 'Scaling customer support',
-      problem:
-        'A growing digital health app needed support that could keep up with patients, clients and clinical teams without slowing the product team down.',
-      did:
-        'Built the help center and knowledge base, set up an offshore team for tier 1 and tier 2 tickets, created support reporting, and tested every release alongside the QA team.',
-      result:
-        'Responses within 6 hours and resolutions within 12, with CSAT and ticket trend reporting feeding back into the product.',
-    },
-    {
+      area: 'Go to market',
       sector: 'Deep tech, space software',
-      title: 'Preparing a seed round story',
-      problem:
-        'A highly technical spacecraft simulation platform needed to make sense to non technical investors ahead of its seed round.',
-      did:
-        'Rebuilt the investor narrative and pitch, wrote messaging for investor, enterprise and technical audiences, and mapped the EU and US investor landscape.',
-      result:
-        'A prioritized list of 25+ funds, benchmarks from 18 comparable seed rounds, and an outreach toolkit the founders could run on their own.',
+      metric: '25+',
+      metricLabel: 'investors mapped ahead of a seed round',
+      title: 'Repositioning a startup for investors',
+      problem: 'A highly technical spacecraft simulation platform was hard for non technical investors and buyers to understand.',
+      did: 'Reframed the story around category creation, wrote messaging for investor, enterprise and technical audiences, and benchmarked 18 comparable seed rounds.',
+    },
+    {
+      area: 'Quality assurance',
+      sector: 'Health tech',
+      metric: 'From zero',
+      metricLabel: 'to a full testing life cycle in Playwright',
+      title: 'Standing up QA for a growing product',
+      problem: 'The product had no testing process at all, and releases depended on whoever had time to check them.',
+      did: 'Built and led a QA team, introduced Playwright, and embedded a full testing life cycle into the product and engineering pipeline.',
+    },
+    {
+      area: 'Support operations',
+      sector: 'Digital health',
+      metric: 'Under 6h',
+      metricLabel: 'response time on support tickets',
+      title: 'Scaling customer support',
+      problem: 'A growing health app needed support that kept up with patients, clients and clinical teams without slowing the product team down.',
+      did: 'Built the help center and knowledge base, set up an offshore tier 1 and tier 2 team, and created reporting that fed ticket trends back to product.',
     },
   ],
 }
@@ -152,7 +159,6 @@ export const about = {
     { label: 'Experience', value: '8 years in QA and support operations' },
     { label: 'Industries', value: 'Health tech, proptech, deep tech' },
     { label: 'Education', value: 'MBA, HEC Paris. BA Psychology' },
-    { label: 'Languages', value: 'English, French' },
     { label: 'Based in', value: 'Paris, formerly San Francisco' },
   ],
   paragraphs: [

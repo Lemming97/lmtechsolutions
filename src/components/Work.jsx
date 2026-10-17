@@ -9,15 +9,20 @@ export default function Work() {
         <div className="cases">
           {work.items.map((item) => (
             <article className="case" key={item.title}>
-              <p className="sector">{item.sector}</p>
+              <p className="case-tags">
+                <span className="area">{item.area}</span>
+                <span className="sector">{item.sector}</span>
+              </p>
+              <p className="metric">
+                <strong>{item.metric}</strong>
+                <span>{item.metricLabel}</span>
+              </p>
               <h3>{item.title}</h3>
               <dl>
-                <dt>The problem</dt>
+                <dt>The challenge</dt>
                 <dd>{item.problem}</dd>
                 <dt>What I did</dt>
                 <dd>{item.did}</dd>
-                <dt>The result</dt>
-                <dd className="result">{item.result}</dd>
               </dl>
             </article>
           ))}
