@@ -4,7 +4,7 @@
 export const site = {
   name: 'L&M Technology Solutions',
   legalName: 'L&M Technology Solutions LLC',
-  email: 'contact@lmtechsolutions.co',
+  email: 'info@lmtechsolutions.co',
   locations: 'Paris, France and United States',
 }
 

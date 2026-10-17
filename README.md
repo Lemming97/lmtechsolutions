@@ -26,11 +26,9 @@ Visitors see French if their browser is set to French, English otherwise, and ca
 
 ## Contact form
 
-The "Email Me" button opens a contact form. By default, submitting it opens the visitor's email app with their message filled in. To receive messages straight to your inbox instead:
+The "Email Me" button opens a contact form. Submissions are sent through [Web3Forms](https://web3forms.com), which emails them to the address set up in your Web3Forms account (info@lmtechsolutions.co). The access key lives in `src/config.js`; it is public by design, so it is safe in the site code. A hidden spam trap field filters out most bots.
 
-1. Create a free form at https://formspree.io and set it to send to your email.
-2. Copy the form link (it looks like `https://formspree.io/f/abcdwxyz`).
-3. Paste it into `FORM_ENDPOINT` in `src/config.js`.
+If the key is ever removed, the form falls back to opening the visitor's email app with their message filled in.
 
 ## Project layout
 

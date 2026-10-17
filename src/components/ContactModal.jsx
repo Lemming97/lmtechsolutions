@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useI18n } from '../i18n.jsx'
-import { FORM_ENDPOINT } from '../config.js'
+import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from '../config.js'
 
 const EMPTY = { name: '', email: '', company: '', website: '', message: '' }
+const FIELDS = Object.keys(EMPTY)
 const REQUIRED = ['name', 'email', 'message']
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
@@ -27,7 +28,8 @@ function validate(values, errors) {
 // A pop-up contact form. Uses the native <dialog> element, so Escape closes it,
 // focus stays inside while it's open, and it returns to the button afterwards.
 export default function ContactModal({ open, onClose }) {
-  const { site, contactForm: f } = useI18n().t
+  const { lang, t } = useI18n()
+  const { site, contactForm: f } = t
   const dialogRef = useRef(null)
   const [values, setValues] = useState(EMPTY)
   const [errors, setErrors] = useState({})
@@ -62,15 +64,20 @@ export default function ContactModal({ open, onClose }) {
     e.preventDefault()
     const found = validate(values, f.errors)
     setErrors(found)
-    const first = Object.keys(EMPTY).find((k) => found[k])
+    const first = FIELDS.find((k) => found[k])
     if (first) {
       dialogRef.current?.querySelector(`[name="${first}"]`)?.focus()
       return
     }
 
-    const clean = Object.fromEntries(Object.entries(values).map(([k, v]) => [k, v.trim()]))
+    const clean = Object.fromEntries(FIELDS.map((k) => [k, values[k].trim()]))
+    // Hidden spam trap: real visitors never see or fill this field
+    if (e.target.elements.botcheck?.checked) {
+      setStatus('sent')
+      return
+    }
 
-    if (!FORM_ENDPOINT) {
+    if (!WEB3FORMS_ACCESS_KEY) {
       const details = [
         `${f.fields.name}: ${clean.name}`,
         `${f.fields.email}: ${clean.email}`,
@@ -86,12 +93,23 @@ export default function ContactModal({ open, onClose }) {
 
     setStatus('sending')
     try {
-      const res = await fetch(FORM_ENDPOINT, {
+      const res = await fetch(WEB3FORMS_ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({ ...clean, _subject: `${f.emailSubject}: ${clean.company || clean.name}` }),
+        body: JSON.stringify({
+          access_key: WEB3FORMS_ACCESS_KEY,
+          subject: `${f.emailSubject}: ${clean.company || clean.name}`,
+          from_name: 'L&M Technology Solutions website',
+          name: clean.name,
+          email: clean.email,
+          company: clean.company || '-',
+          website: clean.website || '-',
+          message: clean.message,
+          language: lang,
+        }),
       })
-      setStatus(res.ok ? 'sent' : 'failed')
+      const data = await res.json().catch(() => ({}))
+      setStatus(res.ok && data.success ? 'sent' : 'failed')
     } catch {
       setStatus('failed')
     }
@@ -161,6 +179,7 @@ export default function ContactModal({ open, onClose }) {
           </div>
         ) : (
           <form onSubmit={submit} noValidate>
+            <input type="checkbox" name="botcheck" className="cf-trap" tabIndex={-1} autoComplete="off" aria-hidden="true" />
             <h2 id="cf-title">{f.title}</h2>
             <p className="cf-intro">{f.intro}</p>
             <div className="cf-grid">

@@ -1,8 +1,8 @@
 // Site settings that are the same in every language.
 
-// Where the contact form sends messages. Create a free form at
-// https://formspree.io, then paste its link here, for example:
-//   export const FORM_ENDPOINT = 'https://formspree.io/f/abcdwxyz'
-// While this is empty, the form opens the visitor's email app with
-// their message filled in instead.
-export const FORM_ENDPOINT = ''
+// Contact form submissions are sent through Web3Forms (https://web3forms.com),
+// which emails them to the address set up in your Web3Forms account.
+// This key is public by design, so it is safe to keep in the site code.
+// Leave it empty and the form falls back to opening the visitor's email app.
+export const WEB3FORMS_ACCESS_KEY = '06524fc4-11cf-4afb-837b-6c189301585d'
+export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
