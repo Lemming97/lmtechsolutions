@@ -181,15 +181,17 @@ export const about = {
   title: 'About',
   facts: [
     { label: 'Founder', value: 'Lindsey Martin' },
-    { label: 'Experience', value: '8 years in QA and support operations' },
-    { label: 'Industries', value: 'Health tech, proptech, deep tech' },
+    { label: 'Experience', value: '8+ years across product, QA and technical operations' },
+    { label: 'Industries', value: 'Digital health, proptech, deep tech, consumer technology' },
     { label: 'Education', value: 'MBA, HEC Paris. BA Psychology' },
     { label: 'Based in', value: 'Paris, formerly San Francisco' },
   ],
   paragraphs: [
-    'I started in user research, running usability studies and working in university research labs while finishing my psychology degree. I moved into tech at a digital health company, where I built and ran support operations, tested every release, then moved into technical solutions and led web quality engineering.',
-    'Since then, I have led QA as a consultant, earned a full-stack web development certificate from UC Berkeley Extension, completed my MBA at HEC Paris, and led 0-to-1 product work at a proptech startup.',
-    'That path means I look at a product from every side: the user, the code, the release, and the business. Today I help companies on both sides of the Atlantic build products they can be confident in.',
+    "I’m Lindsey, a product manager with eight years of experience in quality engineering, technical solutions, and support operations. I started in user research, running usability studies and working in university research labs while finishing my psychology degree.",
+    "I moved into tech at a digital health company, where I built and ran support operations, tested every release, and then moved into technical solutions and led web quality engineering. Since then, I have built and led QA teams as a full-time employee and as a consultant, earned a full-stack web development certificate from UC Berkeley Extension, and completed my MBA at HEC Paris, where I advised a deep tech startup on its go-to-market strategy.",
+    "Most recently, I led 0-to-1 product work at a proptech startup building smart access control for new buildings. I drove the product across three very different users: residents, building managers, and installers. I owned a new installer app end to end, from mapping the on-site journey and prototyping flows to writing PRDs and handing off to design and engineering, and took several more features from concept to shipped. I also partnered with engineering on an AI-assisted build approach and built testing into the product process from day one.",
+    "Coming to product from QA and support shapes how I work. I write specs with the edge cases already in them, I know what users actually complain about, and I plan releases with testing built in rather than bolted on.",
+    "That path means I look at a product from every side: the user, the code, the release, and the business. I work best embedded with a team, and today I help companies on both sides of the Atlantic build products they can be confident in.",
   ],
 }
 
