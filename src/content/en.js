@@ -226,8 +226,8 @@ export const contactForm = {
   errors: {
     required: 'Please fill in this field.',
     nameShort: 'Please enter your full name.',
-    email: 'Please enter a valid email address, like name@company.com',
-    website: 'Please enter a web address, like company.com',
+    email: 'Please enter a valid email address, like name@acme.com',
+    website: 'Please enter a web address, like acme.com',
     messageShort: 'Please add a little more detail (at least {min} characters).',
     tooLong: 'Please keep this under {max} characters.',
     summary: 'Please fix the highlighted fields:',

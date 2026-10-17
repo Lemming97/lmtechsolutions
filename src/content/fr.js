@@ -226,8 +226,8 @@ export const contactForm = {
   errors: {
     required: 'Merci de remplir ce champ.',
     nameShort: 'Merci de saisir votre nom complet.',
-    email: 'Merci de saisir une adresse e-mail valide, par exemple nom@entreprise.fr',
-    website: 'Merci de saisir une adresse web, par exemple entreprise.fr',
+    email: 'Merci de saisir une adresse e-mail valide, par exemple nom@acme.com',
+    website: 'Merci de saisir une adresse web, par exemple acme.com',
     messageShort: 'Merci d’ajouter un peu plus de détails (au moins {min} caractères).',
     tooLong: 'Merci de rester sous {max} caractères.',
     summary: 'Merci de corriger les champs signalés :',
