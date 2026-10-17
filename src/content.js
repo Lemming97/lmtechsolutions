@@ -130,6 +130,15 @@ export const work = {
       did: 'Built and led a QA team, introduced Playwright, and embedded a full testing life cycle into the product and engineering pipeline.',
     },
     {
+      area: 'User research',
+      sector: 'Consumer technology',
+      metric: 'Real users',
+      metricLabel: 'testing new hardware and software before launch',
+      title: 'Running usability studies for new products',
+      problem: 'Design and engineering teams needed evidence of how real people used new input mechanisms before committing to hardware and software designs.',
+      did: 'Facilitated usability sessions from one on one interviews to large groups, ran study protocols and surveys, and shared findings with design, engineering and product teams.',
+    },
+    {
       area: 'Support operations',
       sector: 'Digital health',
       metric: 'Under 6h',
