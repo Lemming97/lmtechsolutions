@@ -1,6 +1,6 @@
 # L&M Technology Solutions
 
-Company website for L&M Technology Solutions, served at https://www.lmtechsolutions.co
+Company website for L&M Technology Solutions, served at https://lmtechsolutions.co
 
 Built with React and Vite. Every push to `main` builds the site and deploys it to GitHub Pages through `.github/workflows/deploy.yml`.
 
