@@ -71,7 +71,7 @@ export default function LayersIllustration({ layers }) {
       {/* Middle layer: quality */}
       <g className="layer layer-2">
         <Slab cy={280} top="#DDF4EB" left="#9ED9C3" right="#BDE8D8" />
-        <g transform="translate(0,40)">
+        <g transform="translate(0,64)">
           <rect x="215" y="183" width="42" height="52" rx="5" fill="#fff" stroke={MINT_DARK} strokeWidth="2.5" />
           {[0, 1, 2].map((i) => (
             <g key={i}>
