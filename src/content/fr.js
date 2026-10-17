@@ -200,7 +200,7 @@ export const about = {
 
 export const contact = {
   title: 'Parlons de votre projet',
-  text: "Parlez-moi un peu de ce sur quoi vous travaillez. Je vous réponds sous deux jours ouvrés pour organiser un appel gratuit de 30 minutes.",
+  text: "Parlez-moi un peu de ce sur quoi vous travaillez. Je vous réponds sous deux jours ouvrés pour organiser un appel de 30 minutes.",
   buttonLabel: 'M’écrire',
   subject: 'Demande de projet',
 }

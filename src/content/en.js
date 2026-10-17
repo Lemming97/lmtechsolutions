@@ -200,7 +200,7 @@ export const about = {
 
 export const contact = {
   title: "Let's talk about your project",
-  text: "Tell me a little about what you're working on. I'll reply within two business days to set up a free 30 minute call.",
+  text: "Tell me a little about what you're working on. I'll reply within two business days to set up a 30 minute call.",
   buttonLabel: 'Email me',
   subject: 'Project inquiry',
 }
