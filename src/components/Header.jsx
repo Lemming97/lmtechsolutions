@@ -7,7 +7,6 @@ export default function Header() {
       <div className="wrap">
         <a className="mark" href="#top" aria-label={`${site.name}, home`}>
           <Logo />
-          {site.name}
         </a>
         <nav className="primary" aria-label="Main">
           <ul>

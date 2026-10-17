@@ -34,8 +34,17 @@ header.site {
   border-bottom: 1px solid var(--rule);
 }
 header.site .wrap { display: flex; align-items: center; justify-content: space-between; height: 68px; }
-.mark { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 800; letter-spacing: -.01em; }
-.mark svg { flex: none; }
+.mark { display: flex; align-items: center; text-decoration: none; color: var(--ink); }
+.logo {
+  position: relative; display: inline-flex; align-items: center; gap: 11px;
+  background: #E3E1F7; border-radius: 999px; padding: 7px 20px 7px 18px;
+  font-family: "Sora", "Schibsted Grotesk", sans-serif; white-space: nowrap;
+}
+.logo-initials { font-weight: 600; font-size: 1.05rem; letter-spacing: .08em; color: var(--ink); }
+.logo-divider { width: 1px; height: 17px; background: #9C97C9; }
+.logo-name { font-weight: 300; font-size: .85rem; letter-spacing: .05em; color: #4A4775; }
+.logo-sparkle { position: absolute; top: -8px; right: -4px; line-height: 0; }
+.mark:hover .logo { background: #D8D5F3; }
 nav.primary ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
 nav.primary a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: .975rem; }
 nav.primary a:hover { color: var(--blue); }
@@ -209,4 +218,9 @@ footer.site .wrap { display: flex; justify-content: space-between; flex-wrap: wr
   .case-featured .metric { border-bottom: 1px solid var(--rule); padding-bottom: 18px; }
   .case-featured .metric strong { font-size: 2.6rem; }
   .stack-row { grid-template-columns: 1fr; gap: 6px; }
+}
+
+@media (max-width: 480px) {
+  .logo-divider, .logo-name { display: none; }
+  .logo { padding: 7px 16px; }
 }
