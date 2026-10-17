@@ -95,7 +95,7 @@ export default function LayersIllustration({ layers }) {
       {/* Top layer: product */}
       <g className="layer layer-1">
         <Slab cy={140} top="#F1F0FB" left={LAV} right="#DCD9F7" />
-        <g transform="translate(0,5)">
+        <g transform="translate(0,22)">
           <Note x={205} y={128} color="#FFE9A8" />
           <Note x={245} y={108} color="#D6F2E7" />
           <Note x={250} y={138} color={LAV} />
