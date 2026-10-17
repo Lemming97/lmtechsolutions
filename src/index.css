@@ -228,3 +228,13 @@ nav.primary { margin-left: auto; }
   .nav-cta { padding: 8px 12px; font-size: .9rem; }
   .lang-switch button { padding: 5px 8px; }
 }
+
+/* Language change: text fades out, swaps, and fades back in.
+   The switch itself is excluded so the click responds instantly. */
+main, footer.site, nav.primary { transition: opacity .16s ease; }
+html.lang-fading main,
+html.lang-fading footer.site,
+html.lang-fading nav.primary { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  main, footer.site, nav.primary { transition: none; }
+}

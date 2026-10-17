@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react'
+import { createContext, useContext, useEffect, useLayoutEffect, useRef, useState } from 'react'
 import * as en from './content/en.js'
 import * as fr from './content/fr.js'
 
@@ -9,6 +9,7 @@ export const LANGUAGES = [
 
 const CONTENT = { en, fr }
 const STORAGE_KEY = 'lm-lang'
+const FADE_MS = 160 // keep in sync with the transition in index.css
 
 // Pick the starting language: a ?lang= link wins, then the visitor's saved
 // choice, then their browser language, then English.
@@ -26,16 +27,66 @@ function initialLanguage() {
   return CONTENT[browser] ? browser : 'en'
 }
 
+function prefersReducedMotion() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches
+}
+
+// The section under the top of the viewport, and where it sits, so we can
+// put it back in the same place after the text changes length.
+function readScrollAnchor() {
+  const probe = 90 // just below the sticky header
+  for (const el of document.querySelectorAll('main > section, footer')) {
+    const r = el.getBoundingClientRect()
+    if (r.top <= probe && r.bottom > probe) return { el, top: r.top }
+  }
+  return null
+}
+
 const LanguageContext = createContext(null)
 
 export function LanguageProvider({ children }) {
-  const [lang, setLang] = useState(initialLanguage)
+  // lang: the language the visitor picked (drives the switch right away)
+  // shown: the language whose text is on screen (changes mid-fade)
+  const [lang, setLangState] = useState(initialLanguage)
+  const [shown, setShown] = useState(lang)
+  const anchor = useRef(null)
+  const timer = useRef(null)
+
+  function setLang(next) {
+    if (next === lang || !CONTENT[next]) return
+    setLangState(next)
+    clearTimeout(timer.current)
+    if (prefersReducedMotion()) {
+      anchor.current = readScrollAnchor()
+      setShown(next)
+      return
+    }
+    document.documentElement.classList.add('lang-fading')
+    timer.current = setTimeout(() => {
+      anchor.current = readScrollAnchor()
+      setShown(next)
+    }, FADE_MS)
+  }
+
+  // After the new text renders: keep the same section in view, then fade back in
+  useLayoutEffect(() => {
+    const a = anchor.current
+    if (a && a.el.isConnected) {
+      const drift = a.el.getBoundingClientRect().top - a.top
+      if (drift) window.scrollTo({ top: window.scrollY + drift, behavior: 'instant' })
+    }
+    anchor.current = null
+    requestAnimationFrame(() => document.documentElement.classList.remove('lang-fading'))
+  }, [shown])
 
   useEffect(() => {
-    const t = CONTENT[lang]
-    document.documentElement.lang = lang
+    const t = CONTENT[shown]
+    document.documentElement.lang = shown
     document.title = t.meta.title
     document.querySelector('meta[name="description"]')?.setAttribute('content', t.meta.description)
+  }, [shown])
+
+  useEffect(() => {
     try {
       window.localStorage.setItem(STORAGE_KEY, lang)
     } catch {
@@ -43,14 +94,16 @@ export function LanguageProvider({ children }) {
     }
   }, [lang])
 
+  useEffect(() => () => clearTimeout(timer.current), [])
+
   return (
-    <LanguageContext.Provider value={{ lang, setLang, t: CONTENT[lang] }}>
+    <LanguageContext.Provider value={{ lang, setLang, t: CONTENT[shown] }}>
       {children}
     </LanguageContext.Provider>
   )
 }
 
-// Returns { lang, setLang, t }, where t holds all the copy for the current language
+// Returns { lang, setLang, t }, where t holds all the copy for the language on screen
 export function useI18n() {
   return useContext(LanguageContext)
 }
