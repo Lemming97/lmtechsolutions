@@ -10,6 +10,6 @@ export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit'
 // After a message is sent, the visitor gets a branded confirmation email from a
 // Google Apps Script running on your Google account (see apps-script/README.md).
 // Paste the web app URL here once it's deployed. Leave it empty to skip the email.
-export const CONFIRMATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwm9UsiXi3YSyE2xbn_ziM2hDw_U7L6TXfY-oTFRlfY5J47B8KByOUD0SgeRYgFmQru/exec'
+export const CONFIRMATION_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkAx37wC97voU16nFfwh_UAXRAHbCSwwthwgBBQExQlOK9Ow_iJCzBiqPGQbSyI3wh/exec'
 // Must match CONFIG.token in apps-script/Code.gs
 export const CONFIRMATION_TOKEN = 'lm-confirm-7f3a9c'
