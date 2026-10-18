@@ -1,4 +1,4 @@
-import { useId, useState } from 'react'
+import { useId, useRef, useState } from 'react'
 import { useI18n } from '../i18n.jsx'
 import { Sparkle } from './Logo.jsx'
 
@@ -33,6 +33,20 @@ export default function About() {
   const { about } = useI18n().t
   const [open, setOpen] = useState(false)
   const storyId = useId()
+  const toggleRef = useRef(null)
+
+  function toggle() {
+    if (open) {
+      // If the visitor has scrolled down into the story, glide back up to the
+      // button while the story folds closed, instead of jumping
+      const top = toggleRef.current?.getBoundingClientRect().top ?? 0
+      if (top < 80) {
+        const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+        toggleRef.current.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' })
+      }
+    }
+    setOpen((o) => !o)
+  }
 
   return (
     <section className="block" id="about">
@@ -70,7 +84,8 @@ export default function About() {
             className="about-toggle"
             aria-expanded={open}
             aria-controls={storyId}
-            onClick={() => setOpen((o) => !o)}
+            onClick={toggle}
+            ref={toggleRef}
           >
             {open ? about.less : about.more}
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -108,7 +123,13 @@ export default function About() {
           </li>
         </ol>
 
-        <div className={`about-story${open ? ' is-open' : ''}`} id={storyId} hidden={!open}>
+        <div
+          className={`about-story-wrap${open ? ' is-open' : ''}`}
+          id={storyId}
+          aria-hidden={open ? undefined : 'true'}
+          inert={open ? undefined : ''}
+        >
+        <div className="about-story">
           <div className="about-story-rows">
             {about.story.map((part) => (
               <div className="about-story-row" key={part.heading}>
@@ -130,6 +151,7 @@ export default function About() {
               </div>
             ))}
           </aside>
+        </div>
         </div>
       </div>
     </section>
