@@ -178,7 +178,7 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 .about-details strong { display: block; color: var(--ink); }
 @media (prefers-reduced-motion: reduce) { .about-story-wrap, .about-story-wrap.is-open, .about-story-wrap > .about-story { transition: none; } .about-toggle svg { transition: none; } }
 @media (max-width: 900px) {
-  .about { grid-template-columns: 1fr; grid-template-rows: auto; grid-template-areas: "intro" "path" "more" "story"; row-gap: 0; }
+  .wrap.about { grid-template-columns: 1fr; grid-template-rows: auto; grid-template-areas: "intro" "path" "more" "story"; gap: 0; }
   .about-path { margin-top: 8px; }
   .about-more { margin-top: 28px; }
   .about-story { grid-template-columns: 1fr; padding: 26px 22px; gap: 26px; }
