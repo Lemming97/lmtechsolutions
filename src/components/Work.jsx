@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { useI18n } from '../i18n.jsx'
 import WorkArt from './WorkArt.jsx'
 
@@ -12,6 +12,29 @@ export default function Work() {
   const [index, setIndex] = useState(0)
   const [direction, setDirection] = useState(1)
   const touch = useRef(null)
+  const carousel = useRef(null)
+
+  // Shrink a result headline (like "Utilisateurs") until its longest word
+  // fits the dark panel, so nothing runs off the card in any language
+  useLayoutEffect(() => {
+    const root = carousel.current
+    if (!root) return
+    const fit = () => {
+      root.querySelectorAll('.work-result strong').forEach((el) => {
+        el.style.fontSize = ''
+        let size = parseFloat(getComputedStyle(el).fontSize)
+        while (el.scrollWidth > el.clientWidth + 1 && size > 22) {
+          size -= 2
+          el.style.fontSize = `${size}px`
+        }
+      })
+    }
+    fit()
+    const ro = new ResizeObserver(fit)
+    ro.observe(root)
+    document.fonts?.ready.then(fit)
+    return () => ro.disconnect()
+  }, [work, filter])
 
   const items = filter === 'all' ? work.items : work.items.filter((item) => item.kind === filter)
   const count = items.length
@@ -77,6 +100,7 @@ export default function Work() {
 
         <div
           className="work-carousel"
+          ref={carousel}
           role="region"
           aria-roledescription="carousel"
           aria-label={ui.projects}
