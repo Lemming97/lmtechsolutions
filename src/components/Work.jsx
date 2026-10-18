@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useI18n } from '../i18n.jsx'
+import WorkArt from './WorkArt.jsx'
 
-const SPARKLE = 'M10 0C11 6 14 9 20 10C14 11 11 14 10 20C9 14 6 11 0 10C6 9 9 6 10 0Z'
 const fill = (text, vars) => text.replace(/\{(\w+)\}/g, (_, k) => vars[k])
 
 // Selected Work: filter buttons on top, then one project at a time in a
@@ -101,15 +101,7 @@ export default function Work() {
                   <div className="work-result">
                     <strong>{item.metric}</strong>
                     <span>{item.metricLabel}</span>
-                    <svg className="work-art" width="190" height="112" viewBox="0 0 190 112" aria-hidden="true">
-                      <g transform="translate(18,8)">
-                        <path d="M70 0L140 32 70 64 0 32z" fill="#4C44B8" />
-                        <g transform="translate(0,28)">
-                          <path d="M70 0L140 32 70 64 0 32z" fill="#5CC9A0" opacity=".92" />
-                        </g>
-                      </g>
-                      <path d={SPARKLE} fill="#5CC9A0" transform="translate(160,4) scale(.9)" />
-                    </svg>
+                    <WorkArt name={item.art} />
                   </div>
                   <div className="work-story">
                     <p className="work-tags">

@@ -118,6 +118,7 @@ export const work = {
   items: [
     {
       kind: 'product',
+      art: 'installer',
       area: 'Product Management',
       sector: 'Proptech, Smart Building Access',
       metric: '0 to 1',
@@ -129,6 +130,7 @@ export const work = {
     },
     {
       kind: 'product',
+      art: 'platform',
       area: 'Product Management',
       sector: 'Proptech, SaaS and IoT',
       metric: '3 user groups',
@@ -140,6 +142,7 @@ export const work = {
     },
     {
       kind: 'strategy',
+      art: 'space',
       area: 'Product Strategy and Go to Market',
       sector: 'Deep Tech, Space Software',
       metric: '3 streams',
@@ -151,6 +154,7 @@ export const work = {
     },
     {
       kind: 'research',
+      art: 'research',
       area: 'User Research',
       sector: 'Consumer Technology',
       metric: 'Real users',
@@ -162,6 +166,7 @@ export const work = {
     },
     {
       kind: 'client',
+      art: 'client',
       area: 'Client Solutions',
       sector: 'Digital Health',
       metric: 'One contact',
@@ -173,6 +178,7 @@ export const work = {
     },
     {
       kind: 'qa',
+      art: 'qa',
       area: 'Quality Assurance',
       sector: 'Digital Health',
       metric: '80%',
@@ -184,6 +190,7 @@ export const work = {
     },
     {
       kind: 'support',
+      art: 'support',
       area: 'Support Operations',
       sector: 'Digital Health',
       metric: 'Under 6h',
