@@ -105,8 +105,19 @@ export const work = {
   title: 'Réalisations',
   intro:
     "Des missions produit, recherche, client et qualité, avec les compétences mobilisées pour chacune. Les clients sont décrits par secteur pour préserver leur confidentialité.",
+  filterLabel: 'Filtrer par type de mission',
+  filters: [
+    { key: 'all', label: 'Tous' },
+    { key: 'product', label: 'Produit' },
+    { key: 'strategy', label: 'Stratégie' },
+    { key: 'research', label: 'Recherche' },
+    { key: 'client', label: 'Solutions Client' },
+    { key: 'qa', label: 'QA' },
+    { key: 'support', label: 'Support' },
+  ],
   items: [
     {
+      kind: 'product',
       area: 'Product management',
       sector: 'Proptech, contrôle d’accès des bâtiments',
       metric: '0 à 1',
@@ -117,6 +128,7 @@ export const work = {
       skills: ['Produit 0 à 1', 'Prototypage', 'Parcours UX', 'Spécifications', 'Passation au design'],
     },
     {
+      kind: 'product',
       area: 'Product management',
       sector: 'Proptech, SaaS et IoT',
       metric: '3 profils',
@@ -127,6 +139,7 @@ export const work = {
       skills: ['PRD', 'Priorisation', 'Développement assisté par IA', 'Delivery transverse'],
     },
     {
+      kind: 'strategy',
       area: 'Stratégie produit et go-to-market',
       sector: 'Deep tech, logiciel spatial',
       metric: '3 sources',
@@ -137,6 +150,7 @@ export const work = {
       skills: ['Positionnement', 'Analyse concurrentielle', 'Modèle économique', 'Taille de marché', 'Messages'],
     },
     {
+      kind: 'research',
       area: 'Recherche utilisateur',
       sector: 'Technologie grand public',
       metric: 'Vrais utilisateurs',
@@ -147,6 +161,7 @@ export const work = {
       skills: ["Tests d'utilisabilité", 'Entretiens utilisateurs', 'Questionnaires', 'Synthèse de recherche'],
     },
     {
+      kind: 'client',
       area: 'Solutions client',
       sector: 'Santé numérique',
       metric: 'Un seul contact',
@@ -157,6 +172,7 @@ export const work = {
       skills: ['Onboarding client', 'Gestion des parties prenantes', 'Recueil des besoins', 'Formation'],
     },
     {
+      kind: 'qa',
       area: 'Assurance qualité',
       sector: 'Santé numérique',
       metric: '80 %',
@@ -167,6 +183,7 @@ export const work = {
       skills: ['Stratégie de test', 'Gestion des releases', 'Automatisation', "Direction d'équipe"],
     },
     {
+      kind: 'support',
       area: 'Opérations support',
       sector: 'Santé numérique',
       metric: 'Moins de 6 h',
@@ -287,6 +304,11 @@ export const ui = {
   challenge: 'Le défi',
   whatIDid: 'Ce que j’ai fait',
   skillsUsed: 'Compétences mobilisées',
+  projects: 'Projets',
+  prevProject: 'Projet précédent',
+  nextProject: 'Projet suivant',
+  slideOf: '{n} sur {total}',
+  goToProject: 'Afficher le projet {n}',
   linkedin: 'Profil LinkedIn',
   illustration: 'Une illustration de trois couches empilées',
 }
