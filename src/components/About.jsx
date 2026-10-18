@@ -79,19 +79,6 @@ export default function About() {
             ))}
           </dl>
 
-          <button
-            type="button"
-            className="about-toggle"
-            aria-expanded={open}
-            aria-controls={storyId}
-            onClick={toggle}
-            ref={toggleRef}
-          >
-            {open ? about.less : about.more}
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M6 9l6 6 6-6" />
-            </svg>
-          </button>
         </div>
 
         <ol className="about-path" aria-label={about.pathLabel}>
@@ -122,6 +109,22 @@ export default function About() {
             </div>
           </li>
         </ol>
+
+        <div className="about-more">
+          <button
+            type="button"
+            className="about-toggle"
+            aria-expanded={open}
+            aria-controls={storyId}
+            onClick={toggle}
+            ref={toggleRef}
+          >
+            {open ? about.less : about.more}
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        </div>
 
         <div
           className={`about-story-wrap${open ? ' is-open' : ''}`}
