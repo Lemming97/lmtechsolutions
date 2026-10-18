@@ -45,7 +45,7 @@ header.site .wrap { display: flex; align-items: center; justify-content: space-b
 nav.primary ul { list-style: none; display: flex; gap: 28px; margin: 0; padding: 0; }
 nav.primary a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: .975rem; }
 nav.primary a:hover { color: var(--blue); }
-.nav-cta { background: var(--ink); color: #fff !important; padding: 8px 16px; border-radius: 6px; }
+.nav-cta { background: var(--ink); color: #fff !important; padding: 8px 16px; border-radius: 6px; white-space: nowrap; display: inline-block; }
 .nav-cta:hover { background: var(--blue); }
 
 /* Hero */
@@ -280,7 +280,8 @@ footer.site .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-it
   .stack-inner { padding: 0 18px 20px; }
 }
 
-@media (max-width: 480px) {
+/* Short "L&M" logo when the full name, button and language switch won't fit on one line */
+@media (max-width: 600px) {
   header.site .logo-divider, header.site .logo-name { display: none; }
   header.site .logo { padding: 7px 16px; }
 }
@@ -415,3 +416,9 @@ button.btn-ghost { background: transparent; }
   .cookie-actions .cookie-btn { flex: 1; }
 }
 @media (prefers-reduced-motion: reduce) { .cookie-banner { animation: none; } }
+@media (max-width: 360px) {
+  header.site .wrap { gap: 8px; }
+  .nav-cta { padding: 7px 10px; font-size: .85rem; }
+  .lang-switch button { padding: 4px 7px; }
+  header.site .logo { padding: 7px 12px; }
+}
