@@ -195,6 +195,12 @@ footer.site .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-it
 @media (max-width: 520px) {
   .wrap { padding: 0 16px; }
   .steps { grid-template-columns: 1fr; }
+  /* How we work together: centered on phones */
+  #process h2, #process .intro { text-align: center; }
+  .steps li { padding: 0; text-align: center; }
+  .steps li::before { margin: 0 auto 16px; }
+  .steps p { max-width: 34ch; margin: 0 auto; }
+  .steps-note { text-align: center; border-left: 1px solid var(--rule); border-top: 3px solid var(--pass); }
 }
 
 /* Tools */
