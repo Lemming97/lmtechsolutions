@@ -97,16 +97,16 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 
 /* Process: a real sequence, so numbered */
 .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; counter-reset: step; }
-.steps li { counter-increment: step; padding: 0 24px 0 0; position: relative; }
+.steps li { counter-increment: step; padding: 0 14px; position: relative; text-align: center; }
 .steps li::before {
   content: counter(step);
   display: grid; place-items: center;
   width: 40px; height: 40px; border-radius: 50%;
   background: var(--surface); border: 2px solid var(--ink);
-  font-weight: 700; margin-bottom: 20px; position: relative; z-index: 1;
+  font-weight: 700; margin: 0 auto 20px; position: relative; z-index: 1;
 }
 .steps li::after {
-  content: ""; position: absolute; top: 20px; left: 40px; right: 0; height: 2px; background: var(--rule);
+  content: ""; position: absolute; top: 20px; left: calc(50% + 28px); width: calc(100% - 56px); height: 2px; background: var(--rule);
 }
 .steps li:last-child::after { display: none; }
 .steps h3 { margin: 0 0 8px; font-size: 1.15rem; }
