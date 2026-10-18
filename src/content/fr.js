@@ -191,6 +191,19 @@ export const process = {
   note: 'Quelle que soit la formule, je documente tout au fil de l’eau, pour que votre équipe ne soit jamais bloquée si je m’éloigne.',
 }
 
+// Parcours illustré entre Comment nous travaillons ensemble et À propos
+export const journey = {
+  label: 'Le parcours que j’accompagne',
+  caption: 'De la première idée aux clients satisfaits, une seule consultante tout au long du parcours.',
+  steps: [
+    { label: 'Découvrir', icon: 'bulb' },
+    { label: 'Planifier', icon: 'map' },
+    { label: 'Tester', icon: 'bug' },
+    { label: 'Lancer', icon: 'rocket' },
+    { label: 'Accompagner', icon: 'heart' },
+  ],
+}
+
 export const about = {
   title: 'À propos',
   facts: [

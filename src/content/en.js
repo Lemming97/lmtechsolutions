@@ -191,6 +191,19 @@ export const process = {
   note: 'However we work, I document everything as I go, so your team is never stuck if I step away.',
 }
 
+// Illustrated journey between How we work together and About
+export const journey = {
+  label: 'The journey I cover',
+  caption: 'From first idea to happy customers, one consultant across the whole journey.',
+  steps: [
+    { label: 'Discover', icon: 'bulb' },
+    { label: 'Plan', icon: 'map' },
+    { label: 'Test', icon: 'bug' },
+    { label: 'Launch', icon: 'rocket' },
+    { label: 'Support', icon: 'heart' },
+  ],
+}
+
 export const about = {
   title: 'About',
   facts: [
