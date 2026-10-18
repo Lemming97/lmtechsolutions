@@ -105,8 +105,19 @@ export const work = {
   title: 'Selected Work',
   intro:
     'Product, research, client and quality work, with the skills each one used. Clients are described by industry to keep their details confidential.',
+  filterLabel: 'Filter by type of work',
+  filters: [
+    { key: 'all', label: 'All' },
+    { key: 'product', label: 'Product' },
+    { key: 'strategy', label: 'Strategy' },
+    { key: 'research', label: 'Research' },
+    { key: 'client', label: 'Client Solutions' },
+    { key: 'qa', label: 'QA' },
+    { key: 'support', label: 'Support' },
+  ],
   items: [
     {
+      kind: 'product',
       area: 'Product Management',
       sector: 'Proptech, Smart Building Access',
       metric: '0 to 1',
@@ -117,6 +128,7 @@ export const work = {
       skills: ['0 to 1 product', 'Prototyping', 'UX flows', 'Specs', 'Design handoff'],
     },
     {
+      kind: 'product',
       area: 'Product Management',
       sector: 'Proptech, SaaS and IoT',
       metric: '3 user groups',
@@ -127,6 +139,7 @@ export const work = {
       skills: ['PRDs', 'Prioritization', 'AI assisted development', 'Cross functional delivery'],
     },
     {
+      kind: 'strategy',
       area: 'Product Strategy and Go to Market',
       sector: 'Deep Tech, Space Software',
       metric: '3 streams',
@@ -137,6 +150,7 @@ export const work = {
       skills: ['Positioning', 'Competitive analysis', 'Business model', 'Market sizing', 'Messaging'],
     },
     {
+      kind: 'research',
       area: 'User Research',
       sector: 'Consumer Technology',
       metric: 'Real users',
@@ -147,6 +161,7 @@ export const work = {
       skills: ['Usability testing', 'User interviews', 'Surveys', 'Research synthesis'],
     },
     {
+      kind: 'client',
       area: 'Client Solutions',
       sector: 'Digital Health',
       metric: 'One contact',
@@ -157,6 +172,7 @@ export const work = {
       skills: ['Client onboarding', 'Stakeholder management', 'Requirements gathering', 'Training'],
     },
     {
+      kind: 'qa',
       area: 'Quality Assurance',
       sector: 'Digital Health',
       metric: '80%',
@@ -167,6 +183,7 @@ export const work = {
       skills: ['Test strategy', 'Release management', 'Automation', 'Team leadership'],
     },
     {
+      kind: 'support',
       area: 'Support Operations',
       sector: 'Digital Health',
       metric: 'Under 6h',
@@ -287,6 +304,11 @@ export const ui = {
   challenge: 'The challenge',
   whatIDid: 'What I did',
   skillsUsed: 'Skills used',
+  projects: 'Projects',
+  prevProject: 'Previous project',
+  nextProject: 'Next project',
+  slideOf: '{n} of {total}',
+  goToProject: 'Show project {n}',
   linkedin: 'LinkedIn profile',
   illustration: 'An illustration of three stacked layers',
 }
