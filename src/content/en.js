@@ -230,26 +230,44 @@ export const journey = {
 
 export const about = {
   title: 'About',
+  intro: "I’m Lindsey, a product manager who came up through user research, support and QA. That path means I look at a product from every side.",
   facts: [
-    { label: 'Founder', value: 'Lindsey Martin' },
-    { label: 'Experience', value: '8+ years across product, QA and technical operations' },
-    { label: 'Industries', value: 'Digital health, proptech, deep tech, consumer technology' },
+    { value: '8+', label: 'years' },
+    { value: '4', label: 'industries' },
+    { value: 'HEC', label: 'MBA, Paris' },
+  ],
+  sidesTitle: 'Every side of the product',
+  sides: { user: 'User', code: 'Code', release: 'Release', business: 'Business', all: 'Every side' },
+  path: [
+    { icon: 'brain', side: 'user', title: 'Psychology and User Research', text: 'Usability studies and research labs' },
+    { icon: 'chat', side: 'user', title: 'Support Operations', text: 'Built and ran support in digital health' },
+    { icon: 'shield', side: 'release', title: 'Quality Engineering', text: 'Led web QA, then built QA teams' },
+    { icon: 'code', side: 'code', title: 'Full Stack Development', text: 'Certificate, UC Berkeley Extension' },
+    { icon: 'cap', side: 'business', title: 'MBA, HEC Paris', text: 'Go to market for a deep tech startup' },
+    { icon: 'rocket', side: 'business', title: 'Product Management', text: '0 to 1 product at a proptech startup' },
+  ],
+  today: { title: 'Today: L&M Technology Solutions', text: 'Helping teams in Europe and the US build products they can be confident in' },
+  pathLabel: 'My path',
+  more: 'Read my full story',
+  less: 'Show less',
+  story: [
+    { heading: 'Where I Started', text: "I’m Lindsey, a product manager with eight years of experience in quality engineering, technical solutions, and support operations. I started in user research, running usability studies and working in university research labs while finishing my psychology degree." },
+    { heading: 'Moving Into Tech', text: "I moved into tech at a digital health company, where I built and ran support operations, tested every release, and then moved into technical solutions and led web quality engineering. Since then, I have built and led QA teams as a full-time employee and as a consultant, earned a full-stack web development certificate from UC Berkeley Extension, and completed my MBA at HEC Paris, where I advised a deep tech startup on its go-to-market strategy." },
+    { heading: 'Most Recently', text: "Most recently, I led 0-to-1 product work at a proptech startup building smart access control for new buildings. I drove the product across three very different users: residents, building managers, and installers. I owned a new installer app end to end, from mapping the on-site journey and prototyping flows to writing PRDs, handing off to design and engineering, and shipping several additional features. I also partnered with engineering on an AI-assisted build approach and built testing into the product process from day one." },
+    { heading: 'How I Work', text: "Coming to product from QA and support shapes how I work. I write specs with the edge cases already in them. I understand what users actually complain about, and I plan releases with testing built in rather than bolted on." },
+    { heading: 'Today', text: "That path means I look at a product from every side: the user, the code, the release, and the business. I work best embedded with a team, and today I help companies on both sides of the Atlantic build products they can be confident in." },
+  ],
+  details: [
     {
-      label: 'Education',
-      value: [
-        'MBA, HEC Paris',
-        'Full-Stack Web Development Certificate, UC Berkeley Extension',
-        'BA Psychology, University of San Francisco',
+      heading: 'Education',
+      items: [
+        ['MBA', 'HEC Paris'],
+        ['Full Stack Web Development Certificate', 'UC Berkeley Extension'],
+        ['BA Psychology', 'University of San Francisco'],
       ],
     },
-    { label: 'Based in', value: 'Paris, formerly San Francisco' },
-  ],
-  paragraphs: [
-    "I’m Lindsey, a product manager with eight years of experience in quality engineering, technical solutions, and support operations. I started in user research, running usability studies and working in university research labs while finishing my psychology degree.",
-    "I moved into tech at a digital health company, where I built and ran support operations, tested every release, and then moved into technical solutions and led web quality engineering. Since then, I have built and led QA teams as a full-time employee and as a consultant, earned a full-stack web development certificate from UC Berkeley Extension, and completed my MBA at HEC Paris, where I advised a deep tech startup on its go-to-market strategy.",
-    "Most recently, I led 0-to-1 product work at a proptech startup building smart access control for new buildings. I drove the product across three very different users: residents, building managers, and installers. I owned a new installer app end to end, from mapping the on-site journey and prototyping flows to writing PRDs, handing off to design and engineering, and shipping several additional features. I also partnered with engineering on an AI-assisted build approach and built testing into the product process from day one.",
-    "Coming to product from QA and support shapes how I work. I write specs with the edge cases already in them. I understand what users actually complain about, and I plan releases with testing built in rather than bolted on.",
-    "That path means I look at a product from every side: the user, the code, the release, and the business. I work best embedded with a team, and today I help companies on both sides of the Atlantic build products they can be confident in.",
+    { heading: 'Based In', items: [['', 'Paris, formerly San Francisco']] },
+    { heading: 'Languages', items: [['', 'English and French']] },
   ],
 }
 
