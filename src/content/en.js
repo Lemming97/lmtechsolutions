@@ -76,10 +76,10 @@ export const stack = {
       label: 'Product',
       tone: 'product',
       groups: [
-        { label: 'Product and delivery', icon: 'board', tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile and Scrum'] },
-        { label: 'Design and collaboration', icon: 'palette', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
+        { label: 'Product and Delivery', icon: 'board', tools: ['Jira', 'Confluence', 'ClickUp', 'Notion', 'Agile and Scrum'] },
+        { label: 'Design and Collaboration', icon: 'palette', tools: ['Figma', 'Miro', 'Slack', 'Loom'] },
         { label: 'Analytics', icon: 'chart', tools: ['Google Analytics', 'Google Search Console', 'SQL'] },
-        { label: 'AI tools', icon: 'sparkle', tools: ['Claude', 'Perplexity', 'Gemini'] },
+        { label: 'AI Tools', icon: 'sparkle', tools: ['Claude', 'Perplexity', 'Gemini'] },
       ],
     },
     {
@@ -207,10 +207,10 @@ export const process = {
   title: 'How we work together',
   intro: 'Every engagement starts the same way, then takes the shape your team needs.',
   steps: [
-    { title: 'Intro call', text: "We talk through where you are, what's blocking you and what success looks like." },
-    { title: 'Find the right fit', text: 'A defined project, a few months embedded with your team, or ongoing part-time support. We agree on scope, timing and rates up front.' },
-    { title: 'Work as part of your team', text: 'I join your tools and rituals, with regular check ins so there are no surprises.' },
-    { title: 'Smooth wrap-up', text: 'When an engagement ends, your team already has the documentation and processes to keep things running.' },
+    { title: 'Intro Call', text: "We talk through where you are, what's blocking you and what success looks like." },
+    { title: 'Find the Right Fit', text: 'A defined project, a few months embedded with your team, or ongoing part-time support. We agree on scope, timing and rates up front.' },
+    { title: 'Work as Part of Your Team', text: 'I join your tools and rituals, with regular check ins so there are no surprises.' },
+    { title: 'Smooth Wrap-Up', text: 'When an engagement ends, your team already has the documentation and processes to keep things running.' },
   ],
   note: 'However we work, I document everything as I go, so your team is never stuck if I step away.',
 }
