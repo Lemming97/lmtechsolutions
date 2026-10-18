@@ -4,6 +4,7 @@ import Hero from './components/Hero.jsx'
 import Services from './components/Services.jsx'
 import Work from './components/Work.jsx'
 import Process from './components/Process.jsx'
+import Journey from './components/Journey.jsx'
 import About from './components/About.jsx'
 import Contact from './components/Contact.jsx'
 import Footer from './components/Footer.jsx'
@@ -64,6 +65,7 @@ export default function App() {
             <Services />
             <Work />
             <Process />
+            <Journey />
             <About />
             <Contact />
           </>
