@@ -230,26 +230,44 @@ export const journey = {
 
 export const about = {
   title: 'À propos',
+  intro: "Je suis Lindsey, product manager passée par la recherche utilisateur, le support et la QA. Ce parcours me permet de voir un produit sous tous ses angles.",
   facts: [
-    { label: 'Fondatrice', value: 'Lindsey Martin' },
-    { label: 'Expérience', value: 'Plus de 8 ans en produit, QA et opérations techniques' },
-    { label: 'Secteurs', value: 'Santé numérique, proptech, deep tech, technologie grand public' },
+    { value: '8+', label: 'ans' },
+    { value: '4', label: 'secteurs' },
+    { value: 'HEC', label: 'MBA, Paris' },
+  ],
+  sidesTitle: 'Tous les angles du produit',
+  sides: { user: 'Utilisateur', code: 'Code', release: 'Release', business: 'Business', all: 'Tous les angles' },
+  path: [
+    { icon: 'brain', side: 'user', title: 'Psychologie et Recherche Utilisateur', text: "Études d'utilisabilité et laboratoires de recherche" },
+    { icon: 'chat', side: 'user', title: 'Opérations Support', text: 'Création et pilotage du support en santé numérique' },
+    { icon: 'shield', side: 'release', title: 'Ingénierie Qualité', text: 'Direction de la QA web, puis création d’équipes QA' },
+    { icon: 'code', side: 'code', title: 'Développement Full Stack', text: 'Certificat, UC Berkeley Extension' },
+    { icon: 'cap', side: 'business', title: 'MBA, HEC Paris', text: 'Go-to-market pour une startup deep tech' },
+    { icon: 'rocket', side: 'business', title: 'Product Management', text: 'Produit de 0 à 1 dans une startup proptech' },
+  ],
+  today: { title: "Aujourd'hui : L&M Technology Solutions", text: 'J’aide des équipes en Europe et aux États-Unis à construire des produits en toute confiance' },
+  pathLabel: 'Mon parcours',
+  more: 'Lire mon parcours complet',
+  less: 'Réduire',
+  story: [
+    { heading: 'Mes Débuts', text: "Je suis Lindsey, product manager avec huit ans d'expérience en ingénierie qualité, solutions techniques et opérations support. J'ai commencé par la recherche utilisateur, en menant des études d'utilisabilité et en travaillant dans des laboratoires de recherche universitaires pendant ma licence de psychologie." },
+    { heading: 'Arrivée dans la Tech', text: "Je suis arrivée dans la tech au sein d'une entreprise de santé numérique, où j'ai créé et piloté les opérations support, testé chaque release, puis rejoint les solutions techniques avant de diriger l'ingénierie qualité web. Depuis, j'ai créé et dirigé des équipes QA, en tant que salariée et en tant que consultante, obtenu un certificat en développement web full-stack à UC Berkeley Extension, et terminé mon MBA à HEC Paris, où j'ai conseillé une startup deep tech sur sa stratégie go-to-market." },
+    { heading: 'Plus Récemment', text: "Plus récemment, j'ai mené un projet produit de 0 à 1 dans une startup proptech qui développe un contrôle d'accès intelligent pour les bâtiments neufs. J'ai piloté le produit pour trois utilisateurs très différents : les résidents, les gestionnaires d'immeubles et les installateurs. J'ai porté de bout en bout une nouvelle application pour les installateurs, de la cartographie du parcours sur site et du prototypage des écrans à la rédaction des PRD, à la passation au design et à l'ingénierie, et à la livraison de plusieurs autres fonctionnalités. J'ai aussi travaillé avec l'ingénierie sur une approche de développement assistée par l'IA et intégré les tests au processus produit dès le premier jour." },
+    { heading: 'Ma Façon de Travailler', text: "Venir au produit par la QA et le support façonne ma manière de travailler. J'écris des spécifications qui intègrent déjà les cas limites. Je sais ce dont les utilisateurs se plaignent vraiment, et je planifie des releases où les tests sont prévus dès le départ plutôt qu'ajoutés à la fin." },
+    { heading: "Aujourd'hui", text: "Ce parcours me permet de voir un produit sous tous ses angles : l'utilisateur, le code, la release et le business. Je travaille au mieux en immersion avec une équipe, et j'aide aujourd'hui des entreprises des deux côtés de l'Atlantique à construire des produits en toute confiance." },
+  ],
+  details: [
     {
-      label: 'Formation',
-      value: [
-        'MBA, HEC Paris',
-        'Certificat en développement web full-stack, UC Berkeley Extension',
-        'Licence de psychologie, University of San Francisco',
+      heading: 'Formation',
+      items: [
+        ['MBA', 'HEC Paris'],
+        ['Certificat en Développement Web Full Stack', 'UC Berkeley Extension'],
+        ['Licence de Psychologie', 'University of San Francisco'],
       ],
     },
-    { label: 'Basée à', value: 'Paris, auparavant San Francisco' },
-  ],
-  paragraphs: [
-    "Je suis Lindsey, product manager avec huit ans d'expérience en ingénierie qualité, solutions techniques et opérations support. J'ai commencé par la recherche utilisateur, en menant des études d'utilisabilité et en travaillant dans des laboratoires de recherche universitaires pendant ma licence de psychologie.",
-    "Je suis arrivée dans la tech au sein d'une entreprise de santé numérique, où j'ai créé et piloté les opérations support, testé chaque release, puis rejoint les solutions techniques avant de diriger l'ingénierie qualité web. Depuis, j'ai créé et dirigé des équipes QA, en tant que salariée et en tant que consultante, obtenu un certificat en développement web full-stack à UC Berkeley Extension, et terminé mon MBA à HEC Paris, où j'ai conseillé une startup deep tech sur sa stratégie go-to-market.",
-    "Plus récemment, j'ai mené un projet produit de 0 à 1 dans une startup proptech qui développe un contrôle d'accès intelligent pour les bâtiments neufs. J'ai piloté le produit pour trois utilisateurs très différents : les résidents, les gestionnaires d'immeubles et les installateurs. J'ai porté de bout en bout une nouvelle application pour les installateurs, de la cartographie du parcours sur site et du prototypage des écrans à la rédaction des PRD, à la passation au design et à l'ingénierie, et à la livraison de plusieurs autres fonctionnalités. J'ai aussi travaillé avec l'ingénierie sur une approche de développement assistée par l'IA et intégré les tests au processus produit dès le premier jour.",
-    "Venir au produit par la QA et le support façonne ma manière de travailler. J'écris des spécifications qui intègrent déjà les cas limites. Je sais ce dont les utilisateurs se plaignent vraiment, et je planifie des releases où les tests sont prévus dès le départ plutôt qu'ajoutés à la fin.",
-    "Ce parcours me permet de voir un produit sous tous ses angles : l'utilisateur, le code, la release et le business. Je travaille au mieux en immersion avec une équipe, et j'aide aujourd'hui des entreprises des deux côtés de l'Atlantique à construire des produits en toute confiance.",
+    { heading: 'Basée à', items: [['', 'Paris, auparavant San Francisco']] },
+    { heading: 'Langues', items: [['', 'Anglais et français']] },
   ],
 }
 

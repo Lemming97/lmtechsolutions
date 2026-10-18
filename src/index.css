@@ -118,15 +118,73 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 }
 
 /* About */
-.about { display: grid; grid-template-columns: .8fr 1.2fr; gap: 64px; align-items: start; }
-.about-facts { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 28px; }
-.about-facts dl { margin: 0; }
-.about-facts dt { color: var(--slate); font-size: .9rem; }
-.about-facts dd { margin: 0 0 18px; font-weight: 600; }
-.about-facts dd.multi { margin-bottom: 6px; }
-.about-facts dd.multi:last-child { margin-bottom: 18px; }
-.about-facts dl > div:last-child dd { margin-bottom: 0; }
-.about-copy p { margin: 0 0 18px; max-width: 60ch; }
+/* About: intro, career path tagged by side, full story */
+.about { display: grid; grid-template-columns: 1fr 1.1fr; gap: 24px 64px; align-items: start; }
+.about-lead { font-size: 1.2rem; line-height: 1.55; margin: 0 0 24px; max-width: 46ch; }
+.about-sides { display: flex; align-items: center; gap: 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: 16px; padding: 16px 20px; margin: 0 0 26px; }
+.about-diamond { flex: none; width: 112px; height: 112px; }
+.about-sides-title { margin: 0 0 10px; font-weight: 700; font-size: 1rem; }
+.about-key { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: auto auto; gap: 6px 22px; font-size: .92rem; color: #3F3C66; }
+.about-key li { display: flex; align-items: center; gap: 8px; }
+.about-key i { width: 11px; height: 11px; border-radius: 3px; transform: rotate(45deg); background: var(--side-dot); }
+.side-user { --side-dot: #8F88E6; --side-bg: #ECEAFB; --side-fg: #4338A8; }
+.side-code { --side-dot: #1E9C70; --side-bg: #DDF3EA; --side-fg: #1E9C70; }
+.side-release { --side-dot: #5CC9A0; --side-bg: #E2F6EE; --side-fg: #1E7F5C; }
+.side-business { --side-dot: #4338A8; --side-bg: #E3E1F7; --side-fg: #2F2A80; }
+.about-facts { display: flex; gap: 32px; margin: 0 0 24px; }
+.about-facts dt { font-size: 2.1rem; font-weight: 800; color: var(--blue); letter-spacing: -.02em; line-height: 1.1; }
+.about-facts dd { margin: 2px 0 0; color: var(--slate); font-size: .9rem; }
+.about-toggle {
+  font: inherit; font-weight: 700; font-size: 1rem; color: var(--blue); cursor: pointer;
+  display: inline-flex; align-items: center; gap: 8px; background: none; border: 0; padding: 0 0 3px;
+  border-bottom: 2px solid #C9C5EE;
+}
+.about-toggle:hover { border-color: var(--blue); }
+.about-toggle[aria-expanded="true"] { color: var(--ink); border-color: var(--pass); }
+.about-toggle svg { transition: transform .25s ease; }
+.about-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.about-toggle:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 2px; }
+
+.about-path { list-style: none; margin: 0; padding: 0; position: relative; }
+.about-path::before { content: ""; position: absolute; left: 23px; top: 24px; bottom: 24px; border-left: 2px dashed #C9C5EE; }
+.about-path li { position: relative; display: grid; grid-template-columns: 48px 1fr; gap: 16px; padding-bottom: 18px; }
+.about-path li:last-child { padding-bottom: 0; }
+.about-step-icon { width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; background: var(--side-bg); color: var(--side-fg); box-shadow: 0 0 0 4px var(--paper); }
+.about-path h3 { margin: 3px 0 2px; font-size: 1.05rem; line-height: 1.35; }
+.about-path p { margin: 0; color: var(--slate); font-size: .95rem; }
+.about-tag { display: inline-block; vertical-align: 2px; margin-left: 4px; font-size: .7rem; font-weight: 700; padding: 2px 8px; border-radius: 999px; background: var(--side-bg); color: var(--side-fg); white-space: nowrap; }
+.about-path li.is-today .about-step-icon { background: var(--ink); }
+.about-path li.is-today h3 { color: var(--pass); }
+.about-path li.is-today .about-tag { background: var(--ink); color: #5CC9A0; }
+
+.about-story { grid-column: 1 / -1; margin-top: 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 34px 38px; display: grid; grid-template-columns: 1fr 280px; gap: 40px; }
+.about-story[hidden] { display: none; }
+.about-story.is-open { animation: about-open .35s ease-out; }
+@keyframes about-open { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.about-story-rows { display: grid; gap: 22px; }
+.about-story-row { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid #EEEDF7; }
+.about-story-row:last-child { border-bottom: 0; padding-bottom: 0; }
+.about-story-row h3 { margin: 3px 0 0; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--pass); }
+.about-story-row p { margin: 0; line-height: 1.7; color: #3F3C66; }
+.about-details { background: var(--paper); border-radius: 14px; padding: 22px; align-self: start; display: grid; gap: 18px; font-size: .92rem; color: #3F3C66; }
+.about-details h3 { margin: 0 0 8px; font-size: .8rem; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+.about-details p { margin: 0 0 8px; }
+.about-details p:last-child { margin-bottom: 0; }
+.about-details strong { display: block; color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .about-story.is-open { animation: none; } .about-toggle svg { transition: none; } }
+@media (max-width: 900px) {
+  .about-story { grid-template-columns: 1fr; padding: 26px 22px; gap: 26px; }
+  .about-story-row { grid-template-columns: 1fr; gap: 6px; }
+}
+@media (max-width: 520px) {
+  .about-lead { text-align: center; margin-left: auto; margin-right: auto; }
+  .about-facts { justify-content: center; }
+  .about-intro { display: flex; flex-direction: column; }
+  .about-toggle { align-self: center; }
+  .about-sides { padding: 14px; gap: 14px; }
+  .about-diamond { width: 84px; height: 84px; }
+  .about-key { grid-template-columns: 1fr 1fr; gap: 6px 12px; }
+}
 
 /* Contact */
 .contact { background: var(--ink); color: #fff; border-top: none; }
@@ -496,4 +554,9 @@ button.btn-ghost { background: transparent; }
   .work-dot { width: 16px; }
   .work-dot[aria-current="true"] { width: 30px; }
   .work-count { display: none; }
+}
+.about > * { min-width: 0; }
+@media (max-width: 380px) {
+  .about-diamond { width: 64px; height: 64px; }
+  .about-key { grid-template-columns: 1fr; }
 }
