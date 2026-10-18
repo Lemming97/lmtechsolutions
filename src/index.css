@@ -157,10 +157,11 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 .about-path li.is-today h3 { color: var(--pass); }
 .about-path li.is-today .about-tag { background: var(--ink); color: #5CC9A0; }
 
-.about-story { grid-column: 1 / -1; margin-top: 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 34px 38px; display: grid; grid-template-columns: 1fr 280px; gap: 40px; }
-.about-story[hidden] { display: none; }
-.about-story.is-open { animation: about-open .35s ease-out; }
-@keyframes about-open { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: none; } }
+.about-story-wrap { grid-column: 1 / -1; display: grid; grid-template-rows: 0fr; opacity: 0; transition: grid-template-rows .55s cubic-bezier(.2,.8,.2,1), opacity .35s ease; }
+.about-story-wrap.is-open { grid-template-rows: 1fr; opacity: 1; transition: grid-template-rows .55s cubic-bezier(.2,.8,.2,1), opacity .45s ease .1s; }
+.about-story-wrap > .about-story { min-height: 0; overflow: hidden; transition: padding .55s cubic-bezier(.2,.8,.2,1), margin .55s cubic-bezier(.2,.8,.2,1), border-color .3s ease; }
+.about-story-wrap:not(.is-open) > .about-story { padding-top: 0; padding-bottom: 0; margin-top: 0; border-color: transparent; border-top-width: 0; border-bottom-width: 0; }
+.about-story { margin-top: 20px; background: var(--surface); border: 1px solid var(--rule); border-radius: 18px; padding: 34px 38px; display: grid; grid-template-columns: 1fr 280px; gap: 40px; }
 .about-story-rows { display: grid; gap: 22px; }
 .about-story-row { display: grid; grid-template-columns: 160px 1fr; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid #EEEDF7; }
 .about-story-row:last-child { border-bottom: 0; padding-bottom: 0; }
@@ -171,7 +172,7 @@ section.block { padding: 96px 0; border-top: 1px solid var(--rule); }
 .about-details p { margin: 0 0 8px; }
 .about-details p:last-child { margin-bottom: 0; }
 .about-details strong { display: block; color: var(--ink); }
-@media (prefers-reduced-motion: reduce) { .about-story.is-open { animation: none; } .about-toggle svg { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .about-story-wrap, .about-story-wrap.is-open, .about-story-wrap > .about-story { transition: none; } .about-toggle svg { transition: none; } }
 @media (max-width: 900px) {
   .about-story { grid-template-columns: 1fr; padding: 26px 22px; gap: 26px; }
   .about-story-row { grid-template-columns: 1fr; gap: 6px; }
