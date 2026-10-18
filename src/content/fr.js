@@ -118,6 +118,7 @@ export const work = {
   items: [
     {
       kind: 'product',
+      art: 'installer',
       area: 'Product management',
       sector: 'Proptech, contrôle d’accès des bâtiments',
       metric: '0 à 1',
@@ -129,6 +130,7 @@ export const work = {
     },
     {
       kind: 'product',
+      art: 'platform',
       area: 'Product management',
       sector: 'Proptech, SaaS et IoT',
       metric: '3 profils',
@@ -140,6 +142,7 @@ export const work = {
     },
     {
       kind: 'strategy',
+      art: 'space',
       area: 'Stratégie produit et go-to-market',
       sector: 'Deep tech, logiciel spatial',
       metric: '3 sources',
@@ -151,6 +154,7 @@ export const work = {
     },
     {
       kind: 'research',
+      art: 'research',
       area: 'Recherche utilisateur',
       sector: 'Technologie grand public',
       metric: 'Vrais utilisateurs',
@@ -162,6 +166,7 @@ export const work = {
     },
     {
       kind: 'client',
+      art: 'client',
       area: 'Solutions client',
       sector: 'Santé numérique',
       metric: 'Un seul contact',
@@ -173,6 +178,7 @@ export const work = {
     },
     {
       kind: 'qa',
+      art: 'qa',
       area: 'Assurance qualité',
       sector: 'Santé numérique',
       metric: '80 %',
@@ -184,6 +190,7 @@ export const work = {
     },
     {
       kind: 'support',
+      art: 'support',
       area: 'Opérations support',
       sector: 'Santé numérique',
       metric: 'Moins de 6 h',
