@@ -5,7 +5,7 @@ export const site = {
   name: 'L&M Technology Solutions',
   legalName: 'L&M Technology Solutions LLC',
   email: 'info@lmtechsolutions.co',
-  linkedin: 'https://www.linkedin.com/in/lindsey-m-2219abb0/',
+  linkedin: 'https://www.linkedin.com/company/lmtechsolutions/',
   locations: 'Paris, France et États-Unis',
 }
 
@@ -334,7 +334,7 @@ export const ui = {
   nextProject: 'Projet suivant',
   slideOf: '{n} sur {total}',
   goToProject: 'Afficher le projet {n}',
-  linkedin: 'Profil LinkedIn',
+  linkedin: 'L&M Technology Solutions sur LinkedIn',
   illustration: 'Une illustration de trois couches empilées',
 }
 

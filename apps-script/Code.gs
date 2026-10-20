@@ -20,7 +20,7 @@ const CONFIG = {
   maxPerDay: 100,
   minutesBetweenEmailsToSameAddress: 10,
   site: 'https://lmtechsolutions.co',
-  linkedin: 'https://www.linkedin.com/in/lindsey-m-2219abb0/',
+  linkedin: 'https://www.linkedin.com/company/lmtechsolutions/',
 }
 
 const TEXT = {
