@@ -378,7 +378,8 @@ export const legal = {
     {
       heading: 'Propriété intellectuelle',
       body: [
-        'Les textes, le logo, les illustrations et le design de ce site appartiennent à L&M Technology Solutions. Merci de demander l’autorisation avant toute réutilisation. Les noms des outils cités sur le site appartiennent à leurs propriétaires respectifs.',
+        'Le nom L&M Technology Solutions, son logo et son étincelle, ainsi que l’ensemble des textes, illustrations, éléments de marque, du design et du code source de ce site, sont la propriété de Lindsey Martin. Toute reproduction, réutilisation, modification ou diffusion, totale ou partielle, sans autorisation écrite préalable est interdite.',
+        'Les noms des outils et entreprises cités sur ce site appartiennent à leurs propriétaires respectifs. Demandes d’autorisation : info@lmtechsolutions.co',
       ],
     },
     {

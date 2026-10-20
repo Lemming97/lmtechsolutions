@@ -40,6 +40,18 @@ A cookie banner asks visitors to accept or decline on their first visit (and aga
 
 Fonts are bundled with the site (through `@fontsource`) rather than loaded from Google Fonts, so visitors' browsers never contact Google.
 
+## Copyright and trademarks
+
+© 2026 Lindsey Martin. All rights reserved.
+
+The L&M Technology Solutions name, logo and sparkle mark, the brand kit, the illustrations, the website text and design, and the source code in this repository are the property of Lindsey Martin, who operates L&M Technology Solutions. They may not be copied, reused, modified or distributed, in whole or in part, without prior written permission.
+
+This repository is public only so the site can be hosted on GitHub Pages. It is not open source, and viewing or forking it grants no rights to its contents. See [LICENSE](LICENSE) for the full notice. The same terms appear on the website's [Legal Notice](https://lmtechsolutions.co/#legal-notice).
+
+Third party packages and fonts keep their own licenses, and names of tools and companies mentioned on the site belong to their respective owners.
+
+Permission requests: info@lmtechsolutions.co
+
 ## Project layout
 
 ```
