@@ -18,7 +18,7 @@ export const nav = [
 export const hero = {
   headline: 'Construire le bon produit, puis le lancer sans mauvaises surprises.',
   lede:
-    "Je suis Lindsey Martin, product manager avec plus de 8 ans d'expérience en produit, QA et opérations techniques. J'aide les entreprises à planifier leurs produits, à les tester correctement, à accompagner leurs clients et à mettre le tout sur le marché.",
+    "Je suis Lindsey Martin, product manager avec plus de 10 ans d'expérience en produit, QA et opérations techniques. J'aide les entreprises à planifier leurs produits, à les tester correctement, à accompagner leurs clients et à mettre le tout sur le marché.",
   primaryCta: { label: 'Demander un Appel Découverte', href: '#contact' },
   secondaryCta: { label: 'Voir les Services', href: '#services' },
   // Labels for the layered illustration, top layer first
@@ -232,7 +232,7 @@ export const about = {
   title: 'À propos',
   intro: "Je suis Lindsey, product manager passée par la recherche utilisateur, le support et la QA. Ce parcours me permet de voir un produit sous tous ses angles.",
   facts: [
-    { value: '8+', label: 'ans' },
+    { value: '10+', label: 'ans' },
     { value: '4', label: 'secteurs' },
     { value: 'HEC', label: 'MBA, Paris' },
   ],
@@ -251,7 +251,7 @@ export const about = {
   more: 'Lire mon parcours complet',
   less: 'Réduire',
   story: [
-    { heading: 'Mes Débuts', text: "Je suis Lindsey, product manager avec huit ans d'expérience en ingénierie qualité, solutions techniques et opérations support. J'ai commencé par la recherche utilisateur, en menant des études d'utilisabilité et en travaillant dans des laboratoires de recherche universitaires pendant ma licence de psychologie." },
+    { heading: 'Mes Débuts', text: "Je suis Lindsey, product manager avec dix ans d'expérience en ingénierie qualité, solutions techniques et opérations support. J'ai commencé par la recherche utilisateur, en menant des études d'utilisabilité et en travaillant dans des laboratoires de recherche universitaires pendant ma licence de psychologie." },
     { heading: 'Arrivée dans la Tech', text: "Je suis arrivée dans la tech au sein d'une entreprise de santé numérique, où j'ai créé et piloté les opérations support, testé chaque release, puis rejoint les solutions techniques avant de diriger l'ingénierie qualité web. Depuis, j'ai créé et dirigé des équipes QA, en tant que salariée et en tant que consultante, obtenu un certificat en développement web full-stack à UC Berkeley Extension, et terminé mon MBA à HEC Paris, où j'ai conseillé une startup deep tech sur sa stratégie go-to-market." },
     { heading: 'Plus Récemment', text: "Plus récemment, j'ai mené un projet produit de 0 à 1 dans une startup proptech qui développe un contrôle d'accès intelligent pour les bâtiments neufs. J'ai piloté le produit pour trois utilisateurs très différents : les résidents, les gestionnaires d'immeubles et les installateurs. J'ai porté de bout en bout une nouvelle application pour les installateurs, de la cartographie du parcours sur site et du prototypage des écrans à la rédaction des PRD, à la passation au design et à l'ingénierie, et à la livraison de plusieurs autres fonctionnalités. J'ai aussi travaillé avec l'ingénierie sur une approche de développement assistée par l'IA et intégré les tests au processus produit dès le premier jour." },
     { heading: 'Ma Façon de Travailler', text: "Venir au produit par la QA et le support façonne ma manière de travailler. J'écris des spécifications qui intègrent déjà les cas limites. Je sais ce dont les utilisateurs se plaignent vraiment, et je planifie des releases où les tests sont prévus dès le départ plutôt qu'ajoutés à la fin." },
